@@ -1504,3 +1504,28 @@ body{font-family:var(--serif)!important;}
 .page-view:not(.active){display:none !important;}
 .gallery-section{content-visibility:auto;contain-intrinsic-size:1200px;}
 .masonry-gallery img{content-visibility:auto;}
+
+/* =========================================================
+   FOOTER LOGO STRETCH FIX
+   The footer logo was being pulled tall because the HTML height attribute
+   was not overridden. Force the footer logo to keep its real proportions.
+   ========================================================= */
+.footer-brand > img,
+.footer .footer-brand > img{
+  width:128px !important;
+  height:auto !important;
+  max-width:128px !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  aspect-ratio:auto !important;
+  display:block !important;
+  margin:0 auto !important;
+}
+@media (max-width:760px){
+  .footer-brand > img,
+  .footer .footer-brand > img{
+    width:118px !important;
+    max-width:118px !important;
+    height:auto !important;
+  }
+}
