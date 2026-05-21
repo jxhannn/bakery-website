@@ -1,0 +1,1506 @@
+:root{
+  --brown:#3E1F00;
+  --brown-dark:#2A1200;
+  --pink:#d9156f;
+  --pink-bright:#FF1493;
+  --pink-soft:#F8D5DD;
+  --cream:#FFF5E6;
+  --soft-cream:#fffaf4;
+  --ivory:#FFF9F0;
+  --blush:#FFEFF1;
+  --paper:#FFF7EC;
+  --text:#2F1709;
+  --muted:#765a49;
+  --border:rgba(217,21,111,.25);
+  --shadow:0 10px 24px rgba(62,31,0,.08);
+  --script:"Great Vibes","Parisienne","Brush Script MT","Segoe Script","Lucida Handwriting",cursive;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:14px}
+body{margin:0;background:var(--ivory);color:var(--text);font-family:var(--serif);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px,88vw);margin:0 auto}
+.container-wide{width:min(1500px,95vw);margin:0 auto}
+.page-view{display:none}.page-view.active{display:block}
+
+.site-header{position:relative;z-index:10;background:var(--cream)}
+.top-bar{height:30px;background:var(--brown-dark);color:#fffaf4;display:flex;align-items:center;justify-content:center;font-size:15px;letter-spacing:.12px;line-height:1}
+.main-nav{height:92px;background:linear-gradient(180deg,#fff8ed 0%,#fff3e6 100%);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid rgba(62,31,0,.06);position:relative}
+.nav-side{display:flex;align-items:center;justify-content:center;gap:88px;font-size:17px;font-weight:600}
+.nav-left{grid-column:1;padding-right:32px}
+.nav-right{grid-column:3;padding-left:32px}
+.nav-link{position:relative;padding:8px 8px 12px;transition:.2s ease;color:#271205;white-space:nowrap;outline:0;border:0;box-shadow:none}
+.nav-link:hover,.nav-link.active{color:var(--pink)}
+.nav-link:focus,.nav-link:focus-visible{outline:0;border:0;box-shadow:none}
+.nav-link.active::after{content:"";position:absolute;left:50%;bottom:3px;transform:translateX(-50%);width:56px;height:9px;background:linear-gradient(90deg,var(--pink) 0 40%,transparent 40% 47%,var(--pink) 47% 53%,transparent 53% 60%,var(--pink) 60% 100%);mask:linear-gradient(#000,#000) top/100% 2px no-repeat,radial-gradient(circle at 50% 6px,#000 0 3.3px,transparent 3.8px);-webkit-mask:linear-gradient(#000,#000) top/100% 2px no-repeat,radial-gradient(circle at 50% 6px,#000 0 3.3px,transparent 3.8px)}
+.brand-logo{position:absolute;left:50%;top:8px;transform:translateX(-50%);width:134px;z-index:5;filter:drop-shadow(0 8px 10px rgba(62,31,0,.12));outline:0}
+.brand-logo:focus,.brand-logo:focus-visible{outline:0}
+.brand-logo img{width:100%;height:auto}
+
+.hero{position:relative;overflow:hidden;background:var(--cream)}
+.home-hero{height:360px;border-bottom:1px solid rgba(62,31,0,.05)}
+.hero-carousel,.hero-slide{position:absolute;inset:0;width:100%;height:100%}
+.hero-slide{opacity:0;transition:opacity 1400ms ease;filter:saturate(1.02) contrast(.99);background-color:#fff8ef}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:fill;object-position:center right}
+.slide-gold img{object-position:center right}.slide-white img{object-position:center right}.slide-floral img{object-position:center right}.slide-cream img{object-position:center right}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,248,239,.18) 0%,rgba(255,248,239,.12) 34%,rgba(255,248,239,.04) 52%,rgba(255,248,239,0) 100%)}
+.hero-content{position:relative;z-index:2;width:min(420px,38vw);padding-top:54px;margin-left:10.6vw;text-align:center;color:var(--text)}
+.hero-content h1{font-family:var(--script);font-size:clamp(3.6rem,5.25vw,5.85rem);line-height:.88;margin:0 0 12px;color:var(--pink);font-weight:400;letter-spacing:.2px;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 12px;color:#7C5C2A}
+.divider span{height:1px;background:linear-gradient(90deg,transparent,var(--brown),transparent);width:132px;position:relative}
+.divider b{font-size:14px;color:#7A5A23;line-height:1}
+.divider.small span{width:145px;height:1px}
+.divider.tiny{margin:7px 0 11px;gap:8px}.divider.tiny span{width:50px;height:1px}.divider.tiny b{font-size:11px;color:var(--pink)}
+.hero-products{font-size:20px;margin:0 0 18px;word-spacing:2px;color:var(--brown);letter-spacing:.12px}.hero-products span{font-size:15px;color:#73522b;margin:0 6px}
+.hero-buttons{display:flex;gap:15px;align-items:center;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;min-width:154px;padding:0 20px;border-radius:8px;font-weight:700;font-size:15.5px;transition:.2s ease;border:2px solid var(--pink);box-shadow:0 8px 15px rgba(217,21,111,.10)}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--pink);color:white}.btn-outline{background:var(--soft-cream);color:var(--brown)}.btn-icon{font-size:20px;line-height:1}.btn.full{width:100%}
+.carousel-dots{display:none}
+
+.section-title{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 16px;text-align:center}.section-title h2{font-size:30px;line-height:1;margin:0;color:var(--brown)}.section-title span{width:72px;height:2px;background:linear-gradient(90deg,transparent,var(--pink))}.section-title span:last-child{background:linear-gradient(90deg,var(--pink),transparent)}.section-title i{color:var(--pink);font-style:normal;font-size:11px;line-height:1}
+.signature{padding:20px 0 38px}.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:1120px;margin:0 auto}.product-card{background:#fffaf7;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 4px 14px rgba(62,31,0,.035)}.product-card img{width:100%;height:138px;object-fit:cover;object-position:center;display:block}.cakes-card img{object-position:center 55%}.cupcakes-card img,.scones-card img{object-position:center center}.product-card h3{font-size:21px;margin:8px 0 3px;color:var(--brown);font-weight:700}.product-card p{font-size:14px;margin:0 12px 14px;color:#3f2112}
+
+.page-hero{height:250px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid rgba(62,31,0,.05);background:#fff6ec}.page-hero-bg{position:absolute;inset:0;background-repeat:no-repeat;background-position:right center;background-size:auto 100%;opacity:.62}.gallery-bg{background-image:url('../assets/banners/banner-2.webp');opacity:.50}.about-bg{background-image:url('../assets/banners/banner-1.webp');background-size:cover;background-position:center;opacity:.58}.contact-bg{background-image:url('../assets/banners/banner-5.webp');opacity:.46}.page-title-wrap{position:relative;z-index:1;text-align:center;color:var(--text);margin-top:12px}.page-title-wrap h1{font-family:var(--script);font-weight:400;color:var(--pink);font-size:64px;line-height:.92;margin:0 0 7px}.page-title-wrap p{font-size:18px;margin:0}.page-title-row{display:flex;align-items:center;justify-content:center;gap:22px}.page-title-row span{width:56px;height:1px;background:var(--brown);opacity:.55}.page-title-row h1{font-family:var(--script);font-size:60px}.small-title-hero{height:190px}.small-title-hero .page-title-wrap{margin-top:28px}.small-title-hero p{font-size:17px}.about-title{text-align:left;width:min(1120px,88vw)}.about-title h1{font-size:58px}.about-title p{font-size:19px}.contact-title h1{font-size:66px}
+
+.gallery-section{padding:28px 0 30px}.masonry-gallery{columns:5 215px;column-gap:12px}.masonry-gallery img{width:100%;break-inside:avoid;margin:0 0 12px;border-radius:14px;box-shadow:0 4px 12px rgba(62,31,0,.05);background:#fff}.masonry-gallery img:hover{transform:translateY(-2px);transition:.2s ease;box-shadow:var(--shadow)}
+
+.about-content{display:grid;grid-template-columns:1fr 1fr 1.05fr;gap:18px;padding:24px 0 28px}.about-card,.values-card{background:rgba(255,250,242,.75);border:1px solid var(--border);border-radius:14px;box-shadow:0 5px 18px rgba(62,31,0,.04)}.about-card{padding:20px 23px}.about-card .section-title h2,.values-card .section-title h2,.contact-section .section-title h2{font-size:24px}.about-card .section-title{margin-bottom:16px}.story-card p{font-size:15.5px;line-height:1.67;margin:0;color:#3b2115}.love-list{list-style:none;margin:0;padding:0;display:grid;gap:13px}.love-list li{display:flex;align-items:center;gap:14px;font-size:15.5px}.love-list span{width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#fb7b8b,#e84e6a);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto}.bake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 18px;text-align:center}.bake-grid img{width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0 auto 6px;border:2px solid #f2d4d2}.bake-grid p{margin:0;font-size:14.5px}.values-card{grid-column:1/-1;padding:17px 24px 22px}.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.values-grid article{display:grid;grid-template-columns:60px 1fr;column-gap:12px;align-items:center;padding:6px 22px;border-right:1px dashed #ddaeb5}.values-grid article:last-child{border-right:0}.values-grid span{grid-row:1/3;color:var(--pink);font-size:46px;font-family:var(--script);line-height:1;text-align:center}.values-grid h3{margin:0 0 3px;font-size:17.5px}.values-grid p{margin:0;font-size:13.5px;line-height:1.32;color:#4b2f22}
+
+.contact-section{display:grid;grid-template-columns:.95fr 1.15fr;gap:40px;padding:24px 0 30px}.contact-info-panel,.inquiry-panel{min-width:0}.contact-section .section-title{margin-bottom:14px}.contact-card,.map-card,.inquiry-panel form,.order-note{border:1px solid var(--border);border-radius:14px;background:rgba(255,250,242,.76);box-shadow:0 4px 14px rgba(62,31,0,.04)}.contact-card{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:center;padding:15px 21px;margin-bottom:12px}.contact-card span{width:50px;height:50px;border-radius:50%;background:#ffe7ee;border:1px solid #f3c6cf;color:var(--pink);display:flex;align-items:center;justify-content:center;font-size:25px}.contact-card h3{font-size:20px;margin:0 0 3px}.contact-card p{font-size:15.5px;margin:0}.map-card{display:grid;grid-template-columns:1.25fr .8fr;gap:18px;align-items:center;padding:13px 16px}.map-visual{height:116px;border-radius:10px;position:relative;overflow:hidden;background:linear-gradient(35deg,#e9e6d3 0 18%,#faf8e8 18% 28%,#dde5d8 28% 42%,#f9f5e5 42% 55%,#dfe7de 55% 68%,#fbf7e7 68% 100%)}.map-visual::before,.map-visual::after{content:"";position:absolute;inset:20px -20px;height:11px;background:rgba(255,255,255,.9);transform:rotate(-20deg);box-shadow:0 36px rgba(255,255,255,.8),0 72px rgba(255,255,255,.65)}.map-visual::after{transform:rotate(25deg);inset:48px -10px}.map-visual span{position:absolute;left:53%;top:41%;transform:translate(-50%,-50%);width:29px;height:29px;border-radius:50% 50% 50% 0;background:var(--pink);color:#fff;rotate:-45deg;display:flex;align-items:center;justify-content:center;z-index:1;font-size:0}.map-visual span::after{content:"";width:9px;height:9px;border-radius:50%;background:#fff}.visit-copy h3{font-size:20px;color:var(--pink);margin:0}.visit-copy p{font-size:13.5px;line-height:1.35;margin:0}.contact-form{padding:20px 22px 19px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-size:14px;font-weight:700;margin-bottom:15px}input,textarea{width:100%;margin-top:7px;border:1px solid #e3b8b4;background:#fff8f1;border-radius:7px;padding:11px 13px;font:14.5px var(--serif);color:#3b2115;outline:none}input:focus,textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(228,20,104,.12)}textarea{resize:vertical;min-height:84px}.order-note{margin-top:14px;padding:15px 20px;display:flex;align-items:center;gap:16px;background:#ffe6e2}.order-note span{width:48px;height:48px;border-radius:50%;background:#ffd4de;color:var(--pink);display:flex;align-items:center;justify-content:center;font-size:26px}.order-note p{margin:0;font-size:14.5px;line-height:1.35}.order-note strong{font-size:16px}
+
+.footer{background:var(--cream);border-top:1px solid rgba(62,31,0,.06);position:relative}.footer-lace{height:16px;background:radial-gradient(circle at 10px -1px,transparent 13px,#f7d2cc 13.5px,#f7d2cc 14.5px,transparent 15px) 0 0/24px 18px repeat-x;opacity:.85}.footer-inner{width:min(1120px,88vw);margin:0 auto;display:grid;grid-template-columns:1.15fr .75fr 1fr .9fr 1.25fr;gap:30px;align-items:start;padding:22px 0 18px}.footer-brand img{width:128px}.social-row{display:flex;gap:12px;margin-top:10px}.social-row a{width:34px;height:34px}.footer-block{border-left:1px dashed #e7a8b6;padding-left:24px;min-height:82px}.footer-block h3{font-size:18px;margin:0 0 8px}.footer-block a,.footer-block p{display:block;margin:0 0 5px;font-size:13.5px;color:#3f2112}.script-note{font-family:var(--script);font-size:25px!important;color:var(--pink)!important;margin-top:14px!important}.script-note span{color:#7b6225}.copyright{text-align:center;border-top:1px solid rgba(62,31,0,.08);padding:11px 0 13px;font-size:13px;color:#3f2112;background:rgba(255,249,240,.7)}
+
+@media (min-width:1600px){
+  .home-hero{height:430px}.hero-content{padding-top:64px}.product-card img{height:156px}
+}
+@media (max-width:1100px){
+  .main-nav{height:104px}.brand-logo{width:130px}.nav-side{gap:52px;font-size:16px}.nav-left{padding-right:22px}.nav-right{padding-left:22px}.hero-content{width:46vw;margin-left:5vw;padding-top:60px}.hero-content h1{font-size:clamp(3.8rem,6.4vw,4.8rem)}.hero-products{font-size:19px}.product-grid{gap:20px}.about-content{grid-template-columns:1fr 1fr}.bake-card{grid-column:1/-1}.values-grid{grid-template-columns:1fr 1fr}.values-grid article:nth-child(2){border-right:0}.values-grid article{border-bottom:1px dashed #ddaeb5}.values-grid article:nth-child(n+3){border-bottom:0}.contact-section{grid-template-columns:1fr;gap:26px}.footer-inner{grid-template-columns:1.1fr 1fr 1fr;gap:22px}.footer-block:nth-child(5){grid-column:2/4}
+}
+@media (max-width:760px){
+  .top-bar{height:30px;font-size:14px}.main-nav{height:auto;grid-template-columns:1fr;display:flex;flex-direction:column;padding:10px 14px 15px;gap:7px}.brand-logo{position:relative;left:auto;bottom:auto;transform:none;order:-1;top:auto;width:104px;margin:0 auto 3px}.nav-side{width:100%;justify-content:center;gap:24px;padding:0;font-size:15.5px}.nav-link{padding:7px}.nav-link.active::after{bottom:-5px;width:52px}.home-hero{height:500px}.hero-slide{background-size:auto 58%;background-position:right bottom}.slide-pink{background-size:auto 58%;background-position:right bottom}.hero-overlay{background:linear-gradient(180deg,rgba(255,248,239,.96) 0%,rgba(255,248,239,.86) 46%,rgba(255,248,239,.16) 100%)}.hero-content{width:90vw;margin:0 auto;padding-top:45px}.hero-content h1{font-size:54px}.hero-products{font-size:17px}.hero-buttons{flex-direction:column}.btn{width:min(300px,100%);font-size:15px}.section-title h2{font-size:24px}.section-title span{width:34px}.product-grid{grid-template-columns:1fr}.product-card img{height:180px}.page-hero{height:225px}.small-title-hero{height:178px}.page-title-wrap h1,.page-title-row h1,.contact-title h1{font-size:52px}.about-title{text-align:center}.about-title h1{font-size:46px}.about-title .divider{display:none}.about-content,.contact-section{width:min(94vw,1120px)}.about-content{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.values-grid article{border-right:0!important;border-bottom:1px dashed #ddaeb5!important;padding:15px 8px}.values-grid article:last-child{border-bottom:0!important}.bake-grid{grid-template-columns:repeat(2,1fr)}.form-row,.map-card{grid-template-columns:1fr}.contact-card{grid-template-columns:64px 1fr;padding:14px}.footer-inner{grid-template-columns:1fr;text-align:center}.footer-brand img{margin:0 auto}.social-row{justify-content:center}.footer-block{border-left:0;border-top:1px dashed #e7a8b6;padding:16px 0 0}.footer-block:nth-child(5){grid-column:auto}.masonry-gallery{columns:2 150px;column-gap:10px}.masonry-gallery img{margin-bottom:10px}.container,.container-wide{width:92vw}.page-hero-bg{background-size:auto 85%;background-position:right bottom}
+}
+@media (max-width:420px){
+  .nav-side{gap:16px;font-size:14.5px}.hero-content h1{font-size:50px}.page-title-wrap h1,.page-title-row h1{font-size:44px}.page-title-row{gap:12px}.page-title-row span{width:30px}.masonry-gallery{columns:1}.contact-card h3{font-size:18px}
+}
+
+/* =============================================================
+   STRICT HOME PAGE FINAL FIX
+   Fixes: real script font, no squished banners, tighter 100% zoom
+   proportions, corrected product image crop, and cleaner spacing.
+   ============================================================= */
+:root{
+  --script:"Great Vibes","Parisienne","Brush Script MT","Segoe Script",cursive;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --pink:#d9156f;
+  --brown:#3E1F00;
+  --cream:#FFF5E6;
+}
+html{font-size:14px;}
+body{font-family:var(--serif);font-weight:500;background:#fff8ef;}
+
+/* Header scale: keep the same design, but remove the oversized feeling. */
+.top-bar{
+  height:28px;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+.main-nav{
+  height:86px;
+  display:grid;
+  grid-template-columns:1fr 190px 1fr;
+  background:#fff5e8;
+  align-items:center;
+}
+.nav-side{
+  gap:74px;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.1px;
+}
+.nav-left{padding-right:54px;}
+.nav-right{padding-left:54px;}
+.nav-link{
+  padding:6px 6px 12px;
+  border:none!important;
+  outline:none!important;
+  box-shadow:none!important;
+}
+.nav-link.active::after{
+  bottom:2px;
+  width:52px;
+  height:9px;
+}
+.brand-logo{
+  width:126px;
+  top:8px;
+  z-index:20;
+}
+
+/* Hero: fixed banner proportions and no image distortion. */
+.home-hero{
+  height:356px;
+  background:#fff8ef;
+  border-bottom:1px solid rgba(62,31,0,.04);
+}
+.hero-slide{background:#fff8ef;overflow:hidden;}
+.hero-slide img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover!important;
+  transform:none!important;
+  filter:none;
+}
+/* Slide-specific object positioning prevents bad cropping while keeping true image proportions. */
+.slide-pink img{object-position:72% 47%!important;}
+.slide-gold img{object-position:73% 45%!important;}
+.slide-white img{object-position:70% 47%!important;}
+.slide-floral img{object-position:76% 48%!important;}
+.slide-cream img{object-position:72% 46%!important;}
+.hero-overlay{
+  background:linear-gradient(90deg,rgba(255,248,239,.22) 0%,rgba(255,248,239,.15) 34%,rgba(255,248,239,.05) 54%,rgba(255,248,239,0) 100%);
+  pointer-events:none;
+}
+.hero-content{
+  width:390px;
+  max-width:38vw;
+  margin-left:10.2vw;
+  padding-top:54px;
+  text-align:center;
+}
+.hero-content h1{
+  font-family:var(--script);
+  font-size:clamp(74px,5.6vw,94px);
+  line-height:.82;
+  font-weight:400;
+  letter-spacing:.1px;
+  margin:0 0 9px;
+  color:var(--pink);
+  text-shadow:0 1px 0 rgba(255,255,255,.55);
+}
+.divider{gap:9px;margin-bottom:9px;}
+.divider span{width:128px;background:linear-gradient(90deg,transparent,rgba(62,31,0,.75),transparent);}
+.divider b{font-size:13px;color:#806326;}
+.hero-products{
+  font-size:20px;
+  line-height:1.1;
+  margin:0 0 17px;
+  color:var(--brown);
+  word-spacing:1px;
+}
+.hero-products span{font-size:13px;margin:0 8px;color:#6d4c25;}
+.hero-buttons{gap:16px;}
+.btn{
+  min-height:38px;
+  min-width:160px;
+  padding:0 20px;
+  font-size:16px;
+  border-radius:7px;
+  font-family:var(--serif);
+  font-weight:700;
+  box-shadow:none;
+}
+
+/* Signature section: tighter and closer to the mockup at normal zoom. */
+.signature{
+  padding:18px 0 28px;
+}
+.section-title{
+  gap:10px;
+  margin-bottom:14px;
+}
+.section-title h2{
+  font-family:var(--serif);
+  font-size:31px;
+  font-weight:700;
+  letter-spacing:.1px;
+}
+.section-title span{width:72px;height:1px;}
+.section-title i{font-size:10px;}
+.product-grid{
+  max-width:1110px;
+  gap:28px;
+}
+.product-card{
+  border-radius:13px;
+  background:#fffaf6;
+  box-shadow:none;
+}
+.product-card img{
+  height:130px;
+  object-fit:cover;
+}
+.cakes-card img{object-position:center 50%;}
+.cupcakes-card img{object-position:center 52%;}
+.scones-card img{object-position:center 52%;}
+.product-card h3{
+  font-family:var(--serif);
+  font-size:23px;
+  line-height:1;
+  margin:8px 0 3px;
+}
+.product-card p{
+  font-size:15px;
+  line-height:1.15;
+  margin:0 10px 12px;
+}
+
+/* Desktop-wide refinement. */
+@media (min-width:1600px){
+  .home-hero{height:366px;}
+  .hero-content{padding-top:56px;}
+  .hero-content h1{font-size:96px;}
+  .product-card img{height:132px;}
+}
+
+@media (max-width:1200px){
+  .nav-side{gap:46px;font-size:17px;}
+  .nav-left{padding-right:26px;}
+  .nav-right{padding-left:26px;}
+  .brand-logo{width:118px;}
+  .home-hero{height:340px;}
+  .hero-content{margin-left:6vw;width:370px;max-width:45vw;padding-top:54px;}
+  .hero-content h1{font-size:clamp(64px,7vw,82px);}
+  .hero-products{font-size:18px;}
+  .product-grid{gap:18px;}
+}
+
+@media (max-width:760px){
+  .main-nav{height:auto;grid-template-columns:1fr;display:flex;flex-direction:column;gap:7px;padding:10px 14px 15px;}
+  .brand-logo{position:relative;left:auto;top:auto;transform:none;order:-1;width:106px;margin:0 auto;}
+  .nav-side{width:100%;gap:24px;padding:0;font-size:15.5px;}
+  .home-hero{height:480px;}
+  .hero-slide img{object-fit:cover!important;object-position:70% center!important;}
+  .hero-overlay{background:linear-gradient(180deg,rgba(255,248,239,.96) 0%,rgba(255,248,239,.90) 47%,rgba(255,248,239,.18) 100%);}
+  .hero-content{width:92vw;max-width:none;margin:0 auto;padding-top:38px;}
+  .hero-content h1{font-size:60px;}
+  .hero-products{font-size:17px;}
+  .hero-buttons{flex-direction:column;gap:10px;}
+  .btn{width:min(300px,100%);}
+  .product-grid{grid-template-columns:1fr;}
+  .product-card img{height:175px;}
+}
+
+/* =========================================================
+   PERMANENT HOME HERO FIT FIX
+   The carousel no longer uses full-bleed cover images for the cake.
+   Each slide now uses a safe, cropped foreground image with object-fit: contain,
+   placed over a no-cake satin background. This prevents ALL cake cut-off.
+   ========================================================= */
+html{font-size:13px!important;}
+.top-bar{height:26px!important;font-size:14px!important;}
+.main-nav{height:82px!important;}
+.nav-side{gap:76px!important;font-size:15.5px!important;font-weight:600!important;}
+.nav-left{padding-right:28px!important;}
+.nav-right{padding-left:28px!important;}
+.brand-logo{width:120px!important;top:3px!important;}
+.nav-link{padding:6px 6px 10px!important;}
+
+.home-hero{
+  height:332px!important;
+  overflow:hidden!important;
+  background:#fff8ef url('../assets/banners/satin-bg.webp') center center/cover no-repeat!important;
+  border-bottom:1px solid rgba(62,31,0,.055)!important;
+}
+.hero-carousel,.hero-slide{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;}
+.hero-slide{
+  background:transparent!important;
+  overflow:hidden!important;
+  opacity:0;
+  transition:opacity 1300ms ease!important;
+  filter:none!important;
+}
+.hero-slide.active{opacity:1!important;}
+.hero-slide img{
+  position:absolute!important;
+  top:auto!important;
+  left:auto!important;
+  right:clamp(86px,9vw,170px)!important;
+  bottom:0!important;
+  width:auto!important;
+  height:94%!important;
+  max-width:48vw!important;
+  max-height:94%!important;
+  min-width:0!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  filter:none!important;
+}
+/* Slide-specific sizing/positioning: each cake stays fully visible and proportional. */
+.slide-pink img{height:92%!important;right:clamp(120px,11vw,210px)!important;max-width:43vw!important;}
+.slide-gold img{height:95%!important;right:clamp(122px,12vw,220px)!important;max-width:42vw!important;}
+.slide-white img{height:94%!important;right:clamp(104px,10vw,190px)!important;max-width:45vw!important;}
+.slide-floral img{height:88%!important;right:clamp(58px,6vw,120px)!important;max-width:52vw!important;}
+.slide-cream img{height:94%!important;right:clamp(112px,11vw,205px)!important;max-width:44vw!important;}
+.hero-overlay{background:linear-gradient(90deg,rgba(255,248,239,.30) 0%,rgba(255,248,239,.20) 38%,rgba(255,248,239,.05) 63%,rgba(255,248,239,0) 100%)!important;}
+.hero-content{
+  width:350px!important;
+  max-width:35vw!important;
+  margin-left:11.5vw!important;
+  padding-top:42px!important;
+}
+.hero-content h1{
+  font-size:clamp(60px,5vw,78px)!important;
+  line-height:.84!important;
+  margin-bottom:8px!important;
+}
+.divider{margin-bottom:8px!important;gap:8px!important;}
+.divider span{width:112px!important;height:1px!important;}
+.divider b{font-size:12px!important;}
+.hero-products{font-size:17.5px!important;margin-bottom:15px!important;line-height:1.1!important;}
+.hero-products span{font-size:12px!important;margin:0 7px!important;}
+.hero-buttons{gap:14px!important;}
+.btn{min-height:34px!important;min-width:146px!important;padding:0 17px!important;font-size:14px!important;border-radius:6px!important;}
+
+.signature{padding:16px 0 24px!important;}
+.section-title{margin-bottom:12px!important;gap:9px!important;}
+.section-title h2{font-size:27px!important;line-height:1!important;}
+.section-title span{width:64px!important;height:1px!important;}
+.product-grid{max-width:1040px!important;gap:24px!important;}
+.product-card{border-radius:12px!important;}
+.product-card img{height:116px!important;object-fit:cover!important;}
+.product-card h3{font-size:20px!important;margin:7px 0 2px!important;line-height:1!important;}
+.product-card p{font-size:13.5px!important;margin:0 10px 10px!important;line-height:1.15!important;}
+
+@media (min-width:1600px){
+  .home-hero{height:342px!important;}
+  .hero-content{padding-top:46px!important;}
+  .hero-content h1{font-size:82px!important;}
+  .product-card img{height:120px!important;}
+}
+@media (max-width:1200px){
+  .main-nav{height:78px!important;}
+  .brand-logo{width:112px!important;}
+  .nav-side{gap:40px!important;font-size:15px!important;}
+  .home-hero{height:320px!important;}
+  .hero-content{width:330px!important;max-width:44vw!important;margin-left:6vw!important;padding-top:42px!important;}
+  .hero-content h1{font-size:clamp(54px,6.4vw,70px)!important;}
+  .hero-slide img{right:5vw!important;max-width:52vw!important;height:90%!important;}
+  .slide-pink img,.slide-gold img,.slide-white img,.slide-cream img{right:7vw!important;max-width:48vw!important;height:90%!important;}
+  .slide-floral img{right:3vw!important;max-width:55vw!important;height:84%!important;}
+}
+@media (max-width:760px){
+  html{font-size:14px!important;}
+  .main-nav{height:auto!important;}
+  .home-hero{height:510px!important;background:#fff8ef url('../assets/banners/satin-bg.webp') center center/cover no-repeat!important;}
+  .hero-slide img{
+    right:50%!important;
+    transform:translateX(50%)!important;
+    bottom:4px!important;
+    height:45%!important;
+    max-width:92vw!important;
+    max-height:45%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+  }
+  .slide-floral img{height:38%!important;max-height:38%!important;}
+  .hero-overlay{background:linear-gradient(180deg,rgba(255,248,239,.96) 0%,rgba(255,248,239,.92) 48%,rgba(255,248,239,.35) 100%)!important;}
+  .hero-content{width:90vw!important;max-width:none!important;margin:0 auto!important;padding-top:34px!important;}
+  .hero-content h1{font-size:54px!important;}
+  .hero-products{font-size:16px!important;}
+  .product-card img{height:150px!important;}
+}
+:root{--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif!important;}
+body{font-family:var(--serif)!important;}
+
+/* =========================================================
+   FINAL HERO-SCALE ADJUSTMENT
+   Requested change: make ONLY the banner feel like a 175% zoom preview,
+   without zooming the whole website. This increases the hero text and cake
+   size only, while keeping the rest of the site unchanged.
+   ========================================================= */
+@media (min-width: 761px){
+  .home-hero{
+    height:430px!important;
+  }
+
+  .hero-content{
+    width:min(520px,44vw)!important;
+    max-width:44vw!important;
+    margin-left:6.6vw!important;
+    padding-top:56px!important;
+    z-index:3!important;
+  }
+
+  .hero-content h1{
+    font-size:clamp(88px,7.7vw,124px)!important;
+    line-height:.82!important;
+    margin:0 0 12px!important;
+  }
+
+  .divider{
+    gap:10px!important;
+    margin-bottom:12px!important;
+  }
+
+  .divider span{
+    width:160px!important;
+  }
+
+  .divider b{
+    font-size:15px!important;
+  }
+
+  .hero-products{
+    font-size:27px!important;
+    line-height:1.08!important;
+    margin:0 0 24px!important;
+  }
+
+  .hero-products span{
+    font-size:15px!important;
+    margin:0 11px!important;
+  }
+
+  .hero-buttons{
+    gap:18px!important;
+  }
+
+  .btn{
+    min-height:48px!important;
+    min-width:218px!important;
+    padding:0 28px!important;
+    font-size:18px!important;
+    border-radius:8px!important;
+  }
+
+  .hero-slide img{
+    right:2.2vw!important;
+    bottom:0!important;
+    height:96%!important;
+    max-height:96%!important;
+    max-width:min(39vw,620px)!important;
+    width:auto!important;
+  }
+
+  .slide-pink img{
+    height:97%!important;
+    max-height:97%!important;
+    max-width:min(39vw,620px)!important;
+    right:2.2vw!important;
+  }
+
+  .slide-gold img{
+    height:99%!important;
+    max-height:99%!important;
+    max-width:min(37vw,560px)!important;
+    right:2.8vw!important;
+  }
+
+  .slide-white img{
+    height:98%!important;
+    max-height:98%!important;
+    max-width:min(38vw,590px)!important;
+    right:2.1vw!important;
+  }
+
+  .slide-floral img{
+    height:93%!important;
+    max-height:93%!important;
+    max-width:min(43vw,700px)!important;
+    right:.2vw!important;
+  }
+
+  .slide-cream img{
+    height:98%!important;
+    max-height:98%!important;
+    max-width:min(38vw,570px)!important;
+    right:2.4vw!important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1200px){
+  .home-hero{
+    height:390px!important;
+  }
+
+  .hero-content{
+    width:min(450px,45vw)!important;
+    max-width:45vw!important;
+    margin-left:5.6vw!important;
+    padding-top:48px!important;
+  }
+
+  .hero-content h1{
+    font-size:clamp(76px,7vw,102px)!important;
+  }
+
+  .divider span{
+    width:140px!important;
+  }
+
+  .hero-products{
+    font-size:23px!important;
+    margin-bottom:20px!important;
+  }
+
+  .btn{
+    min-width:190px!important;
+    min-height:44px!important;
+    font-size:16px!important;
+    padding:0 24px!important;
+  }
+
+  .hero-slide img{
+    height:93%!important;
+    max-height:93%!important;
+    max-width:min(44vw,560px)!important;
+    right:1.6vw!important;
+  }
+
+  .slide-floral img{
+    height:89%!important;
+    max-height:89%!important;
+    max-width:min(47vw,610px)!important;
+    right:0!important;
+  }
+}
+
+/* =========================================================
+   FINAL BANNER CAKE ALIGNMENT FIX
+   Requested: move the hero cakes left so the cake centre sits under the
+   About navigation area. This affects only desktop/tablet hero banner images;
+   it does not change the rest of the website font scale or layout.
+   ========================================================= */
+@media (min-width: 761px){
+  .hero-slide img{
+    left:75.5%!important;
+    right:auto!important;
+    transform:translateX(-50%)!important;
+    bottom:0!important;
+    width:auto!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+  }
+
+  .slide-pink img,
+  .slide-gold img,
+  .slide-white img,
+  .slide-floral img,
+  .slide-cream img{
+    left:75.5%!important;
+    right:auto!important;
+    transform:translateX(-50%)!important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1200px){
+  .hero-slide img,
+  .slide-pink img,
+  .slide-gold img,
+  .slide-white img,
+  .slide-floral img,
+  .slide-cream img{
+    left:76.5%!important;
+    right:auto!important;
+    transform:translateX(-50%)!important;
+  }
+}
+
+
+/* =========================================================
+   FINAL CLEAN BANNER IMAGE FIX
+   Replaced the hero slide assets with full clean banner images so there are
+   no visible rectangular seams / lines around the cakes. Keep the enlarged
+   banner text and hero scale, but render each banner as one full-width clean
+   image across the hero area.
+   ========================================================= */
+@media (min-width: 761px){
+  .hero-slide{
+    background:transparent!important;
+  }
+
+  .hero-slide img,
+  .slide-pink img,
+  .slide-gold img,
+  .slide-white img,
+  .slide-floral img,
+  .slide-cream img{
+    position:absolute!important;
+    inset:0!important;
+    left:0!important;
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    transform:none!important;
+    filter:none!important;
+  }
+
+  .hero-overlay{
+    background:linear-gradient(90deg,rgba(255,248,239,.36) 0%,rgba(255,248,239,.26) 36%,rgba(255,248,239,.08) 60%,rgba(255,248,239,0) 100%)!important;
+  }
+}
+
+@media (max-width: 760px){
+  .hero-slide img,
+  .slide-pink img,
+  .slide-gold img,
+  .slide-white img,
+  .slide-floral img,
+  .slide-cream img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    transform:none!important;
+  }
+}
+
+/* =========================================================
+   LOGO SIZE + SIGNATURE PRODUCT IMAGE UPDATE
+   - Makes the center logo on the banner larger
+   - Uses full product images in the Signature Products section
+   - Allows the product cards to grow so the full image and text fit cleanly
+   ========================================================= */
+.brand-logo{
+  width:148px !important;
+}
+
+.signature .product-grid{
+  align-items:stretch;
+}
+
+.signature .product-card{
+  display:flex;
+  flex-direction:column;
+  min-height:auto;
+}
+
+.signature .product-card img{
+  display:block;
+  width:100%;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#fffaf6;
+}
+
+.signature .product-card h3{
+  margin-top:10px !important;
+}
+
+.signature .product-card p{
+  margin:0 14px 16px !important;
+}
+
+/* =========================================================
+   GALLERY HERO LAYOUT TUNE
+   - pushes the Gallery title lower on desktop so the logo does not block it
+   - uses a full-width silk background
+   - centers the cake artwork beneath the title on desktop
+   - keeps mobile similar, but better centered
+   ========================================================= */
+.gallery-hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.gallery-hero .page-hero-bg.gallery-bg{
+  background-image:url('../assets/banners/satin-bg.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  opacity:.9 !important;
+}
+
+.gallery-hero::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:min(560px, 44vw);
+  height:168px;
+  background-image:url('../assets/banners/banner-2.webp');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:right center;
+  opacity:.62;
+  z-index:0;
+  pointer-events:none;
+}
+
+.gallery-hero.small-title-hero{
+  height:205px;
+}
+
+.gallery-hero .page-title-wrap{
+  position:relative;
+  z-index:1;
+  margin-top:54px !important;
+}
+
+.gallery-hero .page-title-wrap p{
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width: 760px){
+  .gallery-hero.small-title-hero{
+    height:190px;
+  }
+
+  .gallery-hero::after{
+    width:min(280px, 72vw);
+    height:138px;
+    bottom:6px;
+    background-position:center center;
+    opacity:.5;
+  }
+
+  .gallery-hero .page-title-wrap{
+    margin-top:26px !important;
+  }
+}
+
+/* =========================================================
+   GALLERY HERO FULL-WIDTH SINGLE-BANNER FIX
+   - removes the visible rectangle/block look
+   - keeps one continuous silk-wave background across the full hero
+   - places the cake as a transparent cutout under the Gallery title
+   - keeps mobile centered and clean
+   ========================================================= */
+.gallery-hero .page-hero-bg.gallery-bg{
+  background-image:url('../assets/banners/satin-bg.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  opacity:1 !important;
+}
+
+.gallery-hero::after{
+  left:50% !important;
+  bottom:0 !important;
+  transform:translateX(-50%) !important;
+  width:min(380px, 31vw) !important;
+  height:176px !important;
+  background-image:url('../assets/banners/gallery-cake-cutout-cropped.webp') !important;
+  background-repeat:no-repeat !important;
+  background-size:contain !important;
+  background-position:center bottom !important;
+  opacity:.72 !important;
+}
+
+.gallery-hero .page-title-wrap{
+  margin-top:58px !important;
+}
+
+@media (max-width: 760px){
+  .gallery-hero::after{
+    width:min(210px, 56vw) !important;
+    height:126px !important;
+    left:50% !important;
+    transform:translateX(-50%) !important;
+    bottom:4px !important;
+    background-position:center bottom !important;
+    opacity:.58 !important;
+  }
+
+  .gallery-hero .page-title-wrap{
+    margin-top:30px !important;
+  }
+}
+
+/* =========================================================
+   GALLERY HERO FULL-SPAN SILK FIX
+   User request: make the gallery banner one continuous full-width image
+   with the silk waves spanning from left to right.
+   ========================================================= */
+.gallery-hero .page-hero-bg.gallery-bg{
+  background-image:url('../assets/banners/gallery-hero-span.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  opacity:1 !important;
+}
+
+.gallery-hero::after{
+  content:none !important;
+  display:none !important;
+}
+
+.gallery-hero .page-title-wrap{
+  margin-top:58px !important;
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width: 760px){
+  .gallery-hero .page-hero-bg.gallery-bg{
+    background-position:center center !important;
+    background-size:cover !important;
+  }
+
+  .gallery-hero .page-title-wrap{
+    margin-top:30px !important;
+  }
+}
+
+
+/* =========================================================
+   ABOUT HERO FULL-WIDTH BANNER FIX
+   - stretches the silk background across the full hero
+   - keeps the cake artwork integrated with the full banner
+   ========================================================= */
+.about-hero .page-hero-bg.about-bg{
+  background-image:url('../assets/banners/banner-1.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  opacity:.62 !important;
+}
+
+
+/* =========================================================
+   CONTACT HERO FULL-SPAN BANNER FIX (corrected)
+   - one singular banner spanning left to right
+   - silk background visible across the full width
+   - cake centered under the heading
+   - heading moved down so the logo does not block it
+   ========================================================= */
+.contact-hero{
+  height:270px;
+}
+.contact-hero .page-hero-bg.contact-bg{
+  background-image:url('../assets/banners/contact-hero-span.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  opacity:1 !important;
+}
+.contact-hero .contact-hero-cake{
+  display:none !important;
+}
+.contact-hero .contact-title{
+  position:relative;
+  z-index:1;
+  margin-top:30px;
+}
+.contact-hero .contact-title p{
+  position:relative;
+  z-index:1;
+}
+@media (max-width: 640px){
+  .contact-hero{
+    height:225px;
+  }
+  .contact-hero .contact-title{
+    margin-top:12px;
+  }
+}
+
+
+/* =========================================================
+   CONTACT HERO FINAL FIX
+   - full-width silk background from left to right
+   - transparent cake centered under the heading
+   - title moved down to clear the logo
+   ========================================================= */
+.contact-hero{
+  height: 285px !important;
+  background: #fff8ef !important;
+  isolation: isolate;
+}
+.contact-hero .page-hero-bg.contact-bg{
+  background-image: url('../assets/banners/satin-bg.webp') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: .96 !important;
+}
+.contact-hero .contact-title{
+  position: relative;
+  z-index: 2;
+  margin-top: 42px !important;
+}
+.contact-hero .contact-title h1{
+  margin-bottom: 8px;
+}
+.contact-hero .contact-title p{
+  position: relative;
+  z-index: 2;
+}
+.contact-hero .contact-hero-cake{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(255px, 24vw) !important;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: none !important;
+}
+@media (max-width: 900px){
+  .contact-hero .contact-hero-cake{
+    width: min(230px, 36vw) !important;
+  }
+  .contact-hero .contact-title{
+    margin-top: 34px !important;
+  }
+}
+@media (max-width: 640px){
+  .contact-hero{
+    height: 225px !important;
+  }
+  .contact-hero .contact-hero-cake{
+    width: min(195px, 52vw) !important;
+    bottom: 0;
+  }
+  .contact-hero .contact-title{
+    margin-top: 10px !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL ACTIVE NAV + ICON FIX
+   - active page uses pink text, two short lines, and a small heart
+   - footer has only Facebook + WhatsApp official-style pink icons
+   - About and Contact icons now match their meaning
+   ========================================================= */
+.nav-link{position:relative !important;}
+.nav-link.active{color:var(--pink) !important;}
+.nav-link.active::after{
+  content:"" !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:4px !important;
+  transform:translateX(-50%) !important;
+  width:58px !important;
+  height:1px !important;
+  background:linear-gradient(90deg,var(--pink) 0 23px,transparent 23px 35px,var(--pink) 35px 58px) !important;
+  mask:none !important;
+  -webkit-mask:none !important;
+  opacity:1 !important;
+}
+.nav-link.active::before{
+  content:"❤" !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:-1px !important;
+  transform:translateX(-50%) !important;
+  color:var(--pink) !important;
+  font-size:8px !important;
+  line-height:1 !important;
+  z-index:2 !important;
+}
+.svg-defs{display:none!important;}
+.love-list span svg,
+.values-grid span svg,
+.contact-card span svg,
+.order-note span svg{
+  width:24px;
+  height:24px;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.love-list span.round-icon{
+  font-size:0 !important;
+}
+.values-grid span.value-icon{
+  font-size:0 !important;
+  font-family:inherit !important;
+}
+.values-grid span.value-icon svg{
+  width:44px;
+  height:44px;
+  margin:auto;
+}
+.contact-card span.contact-icon,
+.order-note span.note-icon{
+  font-size:0 !important;
+}
+.contact-card span.contact-icon svg{
+  width:25px;
+  height:25px;
+}
+.order-note span.note-icon svg{
+  width:27px;
+  height:27px;
+}
+.footer .social-row{
+  gap:14px !important;
+  align-items:center;
+}
+.footer .social-row a{
+  width:36px !important;
+  height:36px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:50%;
+  transition:transform .18s ease, filter .18s ease;
+}
+.footer .social-row a:hover{transform:translateY(-2px);filter:brightness(1.04);}
+.footer .social-row img{
+  width:36px !important;
+  height:36px !important;
+  display:block !important;
+}
+@media (max-width:640px){
+  .nav-link.active::after{bottom:-6px !important;width:50px !important;background:linear-gradient(90deg,var(--pink) 0 19px,transparent 19px 31px,var(--pink) 31px 50px) !important;}
+  .nav-link.active::before{bottom:-11px !important;}
+}
+
+
+/* Final polish fixes */
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.footer-brand > img{
+  display:block;
+  margin:0 auto;
+}
+.footer .social-row{
+  justify-content:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+.footer .social-row a img{
+  object-fit:contain;
+}
+.bake-grid.bake-grid-four{
+  grid-template-columns:repeat(2,1fr);
+  gap:16px 24px;
+}
+.bake-grid.bake-grid-four img{
+  width:72px;
+  height:72px;
+}
+
+
+/* Icon cleanup refinements */
+.love-list span svg,
+.values-grid span svg,
+.contact-card span svg,
+.order-note span svg{
+  fill:none !important;
+  stroke:currentColor !important;
+  stroke-width:1.85 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+}
+.values-grid span.value-icon svg{
+  width:40px !important;
+  height:40px !important;
+}
+.love-list span.round-icon svg{
+  width:22px !important;
+  height:22px !important;
+}
+.contact-card span.contact-icon svg,
+.order-note span.note-icon svg{
+  width:24px !important;
+  height:24px !important;
+}
+.footer-brand{justify-self:center;text-align:center;}
+.footer .social-row{
+  display:flex !important;
+  justify-content:center !important;
+  width:fit-content;
+  margin:12px auto 0 !important;
+  gap:14px !important;
+}
+.footer .social-row a{
+  width:40px !important;
+  height:40px !important;
+}
+.footer .social-row img{
+  width:40px !important;
+  height:40px !important;
+}
+
+
+/* targeted icon tuning */
+.value-icon svg{width:42px !important;height:42px !important;}
+.contact-icon svg,.note-icon svg{width:25px !important;height:25px !important;}
+.round-icon svg{width:22px !important;height:22px !important;}
+
+
+/* Final requested icon replacements: clear, recognisable SVG image icons */
+.values-grid span.value-icon img{
+  width:46px !important;
+  height:46px !important;
+  display:block !important;
+  object-fit:contain !important;
+  margin:auto !important;
+}
+.contact-card span.contact-icon img,
+.order-note span.note-icon img{
+  width:27px !important;
+  height:27px !important;
+  display:block !important;
+  object-fit:contain !important;
+  margin:auto !important;
+}
+.contact-card span.contact-icon,
+.order-note span.note-icon{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* =========================================================
+   FINAL GALLERY MASONRY FIX
+   Keep the Pinterest look without cropping: no forced heights, no object-fit
+   cover. JavaScript splits the images into visual columns so the first images
+   form the top row, then the layout continues downward.
+   ========================================================= */
+.masonry-gallery{
+  columns:initial !important;
+  column-gap:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:14px !important;
+  align-items:start !important;
+}
+.masonry-column{
+  min-width:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:14px !important;
+}
+.masonry-gallery img,
+.masonry-gallery img:nth-child(n){
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  min-height:0 !important;
+  display:block !important;
+  margin:0 !important;
+  break-inside:avoid !important;
+  border-radius:14px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:#fff8ef !important;
+  box-shadow:0 4px 12px rgba(62,31,0,.06) !important;
+  opacity:1;
+  transform:none;
+}
+.masonry-gallery.gallery-row-load img{
+  opacity:0;
+  transform:translateY(14px);
+  animation:galleryRowFade .42s ease forwards;
+  animation-delay:var(--gallery-delay,0ms);
+}
+@keyframes galleryRowFade{
+  to{opacity:1;transform:translateY(0);}
+}
+@media (max-width:1100px){
+  .masonry-gallery{grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:12px !important;}
+  .masonry-column{gap:12px !important;}
+}
+@media (max-width:860px){
+  .masonry-gallery{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:12px !important;}
+  .masonry-column{gap:12px !important;}
+}
+@media (max-width:640px){
+  .masonry-gallery{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+  .masonry-column{gap:10px !important;}
+}
+@media (max-width:380px){
+  .masonry-gallery{grid-template-columns:1fr !important;}
+}
+
+/* =========================================================
+   MOBILE NAVIGATION ONLY
+   Desktop/tablet navigation remains unchanged. On mobile, the
+   page names are hidden from the top bar and opened from the
+   small button in the top-left corner.
+   ========================================================= */
+.mobile-menu-toggle,
+.mobile-nav-panel{
+  display:none;
+}
+
+@media (max-width: 760px){
+  .main-nav{
+    position:relative !important;
+    height:118px !important;
+    min-height:118px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:10px 16px 14px !important;
+    gap:0 !important;
+  }
+
+  /* Hide the normal desktop page names on mobile only. */
+  .main-nav .nav-side{
+    display:none !important;
+  }
+
+  .main-nav .brand-logo{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    transform:none !important;
+    order:0 !important;
+    width:112px !important;
+    margin:0 auto !important;
+    z-index:10 !important;
+  }
+
+  .mobile-menu-toggle{
+    display:inline-flex !important;
+    position:absolute !important;
+    left:16px !important;
+    top:22px !important;
+    width:38px !important;
+    height:38px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:5px !important;
+    border:1px solid rgba(217,21,111,.45) !important;
+    border-radius:10px !important;
+    background:rgba(255,250,246,.92) !important;
+    box-shadow:0 6px 16px rgba(62,31,0,.08) !important;
+    padding:0 !important;
+    cursor:pointer !important;
+    z-index:55 !important;
+  }
+
+  .mobile-menu-toggle span{
+    display:block !important;
+    width:18px !important;
+    height:2px !important;
+    border-radius:999px !important;
+    background:var(--pink) !important;
+    transition:transform .22s ease, opacity .22s ease !important;
+  }
+
+  .main-nav.mobile-menu-open .mobile-menu-toggle span:nth-child(1){
+    transform:translateY(7px) rotate(45deg) !important;
+  }
+  .main-nav.mobile-menu-open .mobile-menu-toggle span:nth-child(2){
+    opacity:0 !important;
+  }
+  .main-nav.mobile-menu-open .mobile-menu-toggle span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .mobile-nav-panel{
+    display:none !important;
+    position:absolute !important;
+    left:16px !important;
+    top:66px !important;
+    width:188px !important;
+    padding:10px !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    background:#fff8ef !important;
+    border:1px solid rgba(217,21,111,.28) !important;
+    border-radius:14px !important;
+    box-shadow:0 14px 32px rgba(62,31,0,.15) !important;
+    z-index:54 !important;
+  }
+
+  .main-nav.mobile-menu-open .mobile-nav-panel{
+    display:flex !important;
+  }
+
+  .mobile-nav-link{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    min-height:38px !important;
+    padding:8px 12px !important;
+    border-radius:10px !important;
+    color:var(--brown) !important;
+    font-family:var(--serif) !important;
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+    text-decoration:none !important;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active{
+    color:var(--pink) !important;
+    background:rgba(217,21,111,.07) !important;
+  }
+
+  .mobile-nav-link.active::after{
+    content:"❤" !important;
+    color:var(--pink) !important;
+    font-size:9px !important;
+    line-height:1 !important;
+  }
+}
+
+/* =========================================================
+   MOBILE HOME HERO BACKGROUND CAROUSEL FIX
+   Desktop remains unchanged. On mobile only, the same five hero cakes keep
+   fading/transitioning, but they render as a soft blurred full-banner layer
+   behind the home text instead of a separate sharp cake at the bottom/right.
+   ========================================================= */
+@media (max-width: 760px){
+  body.view-home .home-hero{
+    height:520px !important;
+    position:relative !important;
+    overflow:hidden !important;
+    isolation:isolate !important;
+    background:#fff8ef !important;
+  }
+
+  body.view-home .home-hero .hero-carousel,
+  body.view-home .home-hero .hero-slide{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    display:block !important;
+  }
+
+  body.view-home .home-hero .hero-carousel{
+    z-index:0 !important;
+  }
+
+  body.view-home .home-hero .hero-slide{
+    opacity:0 !important;
+    overflow:hidden !important;
+    background:#fff8ef !important;
+    transition:opacity 1400ms ease-in-out !important;
+    filter:none !important;
+  }
+
+  body.view-home .home-hero .hero-slide.active{
+    opacity:1 !important;
+  }
+
+  body.view-home .home-hero .hero-slide img,
+  body.view-home .home-hero .slide-pink img,
+  body.view-home .home-hero .slide-gold img,
+  body.view-home .home-hero .slide-white img,
+  body.view-home .home-hero .slide-floral img,
+  body.view-home .home-hero .slide-cream img{
+    position:absolute !important;
+    inset:0 !important;
+    left:0 !important;
+    top:0 !important;
+    right:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:100% !important;
+    max-width:none !important;
+    min-height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:72% center !important;
+    transform:scale(1.045) !important;
+    transform-origin:center center !important;
+    filter:blur(2.2px) saturate(.96) contrast(.98) opacity(.62) !important;
+  }
+
+  body.view-home .home-hero .slide-pink img{object-position:74% center !important;}
+  body.view-home .home-hero .slide-gold img{object-position:72% center !important;}
+  body.view-home .home-hero .slide-white img{object-position:73% center !important;}
+  body.view-home .home-hero .slide-floral img{object-position:76% center !important;}
+  body.view-home .home-hero .slide-cream img{object-position:73% center !important;}
+
+  body.view-home .home-hero .hero-overlay{
+    position:absolute !important;
+    inset:0 !important;
+    z-index:1 !important;
+    pointer-events:none !important;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,248,239,.88) 0%, rgba(255,248,239,.74) 36%, rgba(255,248,239,.48) 70%, rgba(255,248,239,.30) 100%),
+      linear-gradient(180deg, rgba(255,248,239,.88) 0%, rgba(255,248,239,.73) 50%, rgba(255,248,239,.55) 100%) !important;
+  }
+
+  body.view-home .home-hero .hero-content{
+    position:relative !important;
+    z-index:3 !important;
+    width:90vw !important;
+    max-width:none !important;
+    margin:0 auto !important;
+    padding-top:34px !important;
+    text-align:center !important;
+  }
+
+  body.view-home .home-hero .hero-content h1,
+  body.view-home .home-hero .hero-products,
+  body.view-home .home-hero .divider{
+    position:relative !important;
+    z-index:4 !important;
+  }
+
+  body.view-home .home-hero .hero-content h1{
+    text-shadow:0 2px 0 rgba(255,255,255,.78), 0 8px 22px rgba(255,255,255,.55) !important;
+  }
+
+  body.view-home .home-hero .hero-products{
+    text-shadow:0 1px 0 rgba(255,255,255,.78) !important;
+  }
+}
+
+/* =========================================================
+   MOBILE HOME HERO VISIBILITY REFINEMENT
+   Mobile-only: keep the same fading cake carousel, but make the cake layer
+   clearer like the Gallery/About hero banners while preserving text contrast.
+   Desktop CSS is untouched because this is scoped to max-width 760px only.
+   ========================================================= */
+@media (max-width: 760px){
+  body.view-home .home-hero .hero-slide img,
+  body.view-home .home-hero .slide-pink img,
+  body.view-home .home-hero .slide-gold img,
+  body.view-home .home-hero .slide-white img,
+  body.view-home .home-hero .slide-floral img,
+  body.view-home .home-hero .slide-cream img{
+    object-fit:cover !important;
+    transform:scale(1.018) !important;
+    filter:blur(.55px) saturate(1.03) contrast(1.01) opacity(.84) !important;
+  }
+
+  body.view-home .home-hero .slide-pink img{object-position:74% center !important;}
+  body.view-home .home-hero .slide-gold img{object-position:72% center !important;}
+  body.view-home .home-hero .slide-white img{object-position:73% center !important;}
+  body.view-home .home-hero .slide-floral img{object-position:76% center !important;}
+  body.view-home .home-hero .slide-cream img{object-position:73% center !important;}
+
+  body.view-home .home-hero .hero-overlay{
+    background:
+      radial-gradient(circle at 50% 31%, rgba(255,248,239,.74) 0%, rgba(255,248,239,.58) 38%, rgba(255,248,239,.38) 68%, rgba(255,248,239,.24) 100%),
+      linear-gradient(180deg, rgba(255,248,239,.62) 0%, rgba(255,248,239,.42) 52%, rgba(255,248,239,.26) 100%) !important;
+  }
+
+  body.view-home .home-hero .hero-content h1{
+    text-shadow:0 2px 0 rgba(255,255,255,.86), 0 8px 20px rgba(255,255,255,.68) !important;
+  }
+
+  body.view-home .home-hero .hero-products,
+  body.view-home .home-hero .divider{
+    text-shadow:0 1px 0 rgba(255,255,255,.82), 0 4px 14px rgba(255,255,255,.55) !important;
+  }
+}
+
+
+/* Performance optimisation: keep large off-screen pages and gallery images cheap to render. */
+.page-view:not(.active){display:none !important;}
+.gallery-section{content-visibility:auto;contain-intrinsic-size:1200px;}
+.masonry-gallery img{content-visibility:auto;}

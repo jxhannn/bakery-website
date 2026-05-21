@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kabelo’s Tasty Bakery - custom cakes, cupcakes, scones and homemade baked treats in Centurion.">
+  <title>Kabelo’s Tasty Bakery</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/logo/kabelos-logo.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/banners/hero-fit-1.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="view-home">
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;">
+  <symbol id="icon-heart-outline" viewBox="0 0 24 24">
+    <path d="M12 20.7s-6.9-4.3-9.2-8.1c-1.7-2.8-.7-6.3 2.5-7.3 2.1-.7 4.3.2 5.5 1.9 1.2-1.7 3.4-2.6 5.5-1.9 3.2 1 4.2 4.5 2.5 7.3-2.3 3.8-9.2 8.1-9.2 8.1z"/>
+  </symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24">
+    <path d="M18.8 5.6c-6 .3-10.5 3-12.5 7-1.4 2.8-1.4 5.8-1.1 7.8 2 .2 5-.1 7.8-1.7 4-2.2 6.4-6.6 5.8-13.1z"/>
+    <path d="M8 16.8c2.6-2.6 5.7-4.7 9.1-6.3"/>
+  </symbol>
+  <symbol id="icon-cake" viewBox="0 0 24 24">
+    <path d="M6.8 11.2h10.4c1 0 1.8.8 1.8 1.8v4.4c0 1-.8 1.8-1.8 1.8H6.8c-1 0-1.8-.8-1.8-1.8V13c0-1 .8-1.8 1.8-1.8z"/>
+    <path d="M8 11.2V9.8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.4"/>
+    <path d="M12 7.8V5.1"/>
+    <path d="M12 5.1c.8.5 1.2 1.2 1.2 1.9 0 .8-.4 1.4-1.2 1.9-.8-.5-1.2-1.1-1.2-1.9 0-.7.4-1.4 1.2-1.9z"/>
+    <path d="M8.5 14.6h7"/>
+  </symbol>
+  <symbol id="icon-cupcake-note" viewBox="0 0 24 24">
+    <path d="M8 10.7c-.9-1-1.3-1.9-1.3-2.8 0-1.4 1.1-2.4 2.4-2.4.8 0 1.5.4 1.9 1 .4-.6 1.1-1 1.9-1 .8 0 1.5.4 1.9 1 .4-.6 1.1-1 1.9-1 1.3 0 2.4 1 2.4 2.4 0 .9-.4 1.8-1.3 2.8"/>
+    <path d="M7 10.7h10l-1 6.6a1.8 1.8 0 0 1-1.8 1.5H9.8A1.8 1.8 0 0 1 8 17.3z"/>
+    <path d="M6.6 13.2h10.8"/>
+  </symbol>
+  <symbol id="icon-smile" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.5"/>
+    <path d="M9.2 10.2h.01"/>
+    <path d="M14.8 10.2h.01"/>
+    <path d="M8.8 14.1c.8 1.3 2 2 3.2 2s2.4-.7 3.2-2"/>
+  </symbol>
+  <symbol id="icon-rolling-pin" viewBox="0 0 24 24">
+    <path d="M4.4 9.5 7 12.1"/>
+    <path d="M17 12.1 19.6 14.7"/>
+    <rect x="7" y="9.2" width="10" height="4.4" rx="1.7" transform="rotate(45 12 11.4)"/>
+    <path d="M3.8 8.1c-.8.8-.8 2 0 2.8l1 1 2.8-2.8-1-1c-.8-.8-2-.8-2.8 0z"/>
+    <path d="M16.4 13.7l2.8 2.8 1-1c.8-.8.8-2 0-2.8l-1-1z"/>
+  </symbol>
+  <symbol id="icon-gift" viewBox="0 0 24 24">
+    <path d="M4.5 10.2h15v9a1.6 1.6 0 0 1-1.6 1.6H6.1a1.6 1.6 0 0 1-1.6-1.6z"/>
+    <path d="M3.8 7.8h16.4v2.8H3.8z"/>
+    <path d="M12 7.8v13"/>
+    <path d="M12 7.8H8.8c-1.5 0-2.6-1.1-2.6-2.4 0-1.2.9-2.2 2.2-2.2 1.8 0 3.2 2.3 3.6 4.6z"/>
+    <path d="M12 7.8h3.2c1.5 0 2.6-1.1 2.6-2.4 0-1.2-.9-2.2-2.2-2.2-1.8 0-3.2 2.3-3.6 4.6z"/>
+  </symbol>
+  <symbol id="icon-map-pin" viewBox="0 0 24 24">
+    <path d="M12 21s6-6 6-11a6 6 0 1 0-12 0c0 5 6 11 6 11z"/>
+    <circle cx="12" cy="10" r="2.2"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M7 4.8h2.2l1.3 4-1.8 1.5c1 2 2.5 3.6 4.5 4.5l1.5-1.8 4 1.3V17c0 1-.8 1.8-1.8 1.8C10 18.8 5.2 14 5.2 7V6.6c0-1 .8-1.8 1.8-1.8z"/>
+  </symbol>
+  <symbol id="icon-whatsapp-line" viewBox="0 0 24 24">
+    <path d="M12 4.3a7.7 7.7 0 0 1 6.7 11.5 7.7 7.7 0 0 1-8.8 3.6l-3.4.9.9-3.3A7.7 7.7 0 1 1 12 4.3z"/>
+    <path d="M9.3 8.8c-.2-.4-.4-.4-.7-.4h-.5c-.2 0-.4.1-.7.4-.3.3-.9.9-.9 2.2 0 1.3 1 2.7 1.1 2.9.1.2 1.9 3 4.7 4.1.6.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3l-1.7-.8c-.3-.1-.5-.1-.6.2-.2.2-.7.8-.8 1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.2-.8-.7-1.3-1.5-1.5-1.8-.1-.3 0-.4.1-.6l.4-.4c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5 0-.1-.5-1.2-.7-1.7z"/>
+  </symbol>
+</svg>
+<header class="site-header">
+  <a class="top-bar" href="https://wa.me/27762701921?text=Hi%20Kabelo%2C%20I%20would%20like%20to%20place%20an%20order." aria-label="Order via WhatsApp">Order via WhatsApp</a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobile-nav-panel" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <a class="mobile-nav-link active" href="#home" data-page-link="home">Home</a>
+      <a class="mobile-nav-link" href="#gallery" data-page-link="gallery">Gallery</a>
+      <a class="mobile-nav-link" href="#about" data-page-link="about">About</a>
+      <a class="mobile-nav-link" href="#contact" data-page-link="contact">Contact</a>
+    </div>
+    <div class="nav-side nav-left">
+      <a class="nav-link active" href="#home" data-page-link="home">Home</a>
+      <a class="nav-link" href="#gallery" data-page-link="gallery">Gallery</a>
+    </div>
+    <a class="brand-logo" href="#home" data-page-link="home" aria-label="Kabelo's Tasty Bakery home">
+      <img src="assets/logo/kabelos-logo.webp" alt="Kabelo's Tasty Bakery logo" width="588" height="620" decoding="async" fetchpriority="high">
+    </a>
+    <div class="nav-side nav-right">
+      <a class="nav-link" href="#about" data-page-link="about">About</a>
+      <a class="nav-link" href="#contact" data-page-link="contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="page-view active" data-page="home" aria-labelledby="home-title">
+    <section class="hero home-hero" aria-label="Kabelo's Tasty Bakery hero">
+      <div class="hero-carousel" data-carousel>
+        <div class="hero-slide slide-pink active" role="img" aria-label="Pink unicorn cake by Kabelo's Tasty Bakery"><img src="assets/banners/hero-fit-1.webp" alt="" width="1800" height="599" decoding="async" fetchpriority="high"></div>
+        <div class="hero-slide slide-gold" role="img" aria-label="Custom birthday cake by Kabelo's Tasty Bakery"><img src="assets/banners/hero-fit-2.webp" alt="" width="1800" height="599" loading="lazy" decoding="async"></div>
+        <div class="hero-slide slide-white" role="img" aria-label="Elegant celebration cake by Kabelo's Tasty Bakery"><img src="assets/banners/hero-fit-3.webp" alt="" width="1800" height="599" loading="lazy" decoding="async"></div>
+        <div class="hero-slide slide-floral" role="img" aria-label="Decorated floral cake by Kabelo's Tasty Bakery"><img src="assets/banners/hero-fit-4.webp" alt="" width="1800" height="599" loading="lazy" decoding="async"></div>
+        <div class="hero-slide slide-cream" role="img" aria-label="Gold and white celebration cake by Kabelo's Tasty Bakery"><img src="assets/banners/hero-fit-5.webp" alt="" width="1800" height="599" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 id="home-title">Baked<br>with Love</h1>
+        <div class="divider"><span></span><b>❤</b><span></span></div>
+        <p class="hero-products">Cakes <span>•</span> Cupcakes <span>•</span> Scones</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://wa.me/27762701921?text=Hi%20Kabelo%2C%20I%20would%20like%20to%20place%20an%20order.">Order on WhatsApp</a>
+          <a class="btn btn-outline" href="#gallery" data-page-link="gallery">View Gallery</a>
+        </div>
+      </div>
+      <div class="carousel-dots" aria-label="Hero image controls">
+        <button class="active" type="button" aria-label="Show pink cake banner"></button>
+        <button type="button" aria-label="Show banner 2"></button>
+        <button type="button" aria-label="Show banner 3"></button>
+        <button type="button" aria-label="Show banner 4"></button>
+        <button type="button" aria-label="Show banner 5"></button>
+      </div>
+    </section>
+
+    <section class="signature container" aria-labelledby="signature-heading">
+      <div class="section-title"><span></span><i>❤</i><h2 id="signature-heading">Signature Products</h2><i>❤</i><span></span></div>
+      <div class="product-grid">
+        <article class="product-card cakes-card">
+          <img src="assets/products/cake-product.webp" alt="Custom cake" loading="lazy" decoding="async">
+          <h3>Cakes</h3>
+          <p>Custom cakes for any occasion.</p>
+        </article>
+        <article class="product-card cupcakes-card">
+          <img src="assets/products/cupcakes-product.webp" alt="Decorated cupcakes" loading="lazy" decoding="async">
+          <h3>Cupcakes</h3>
+          <p>Moist, fluffy &amp; beautifully decorated.</p>
+        </article>
+        <article class="product-card scones-card">
+          <img src="assets/products/scones-product.webp" alt="Homemade scones" loading="lazy" decoding="async">
+          <h3>Scones</h3>
+          <p>Buttery, homemade &amp; perfect with tea.</p>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <section id="gallery" class="page-view" data-page="gallery" aria-labelledby="gallery-title">
+    <section class="page-hero gallery-hero small-title-hero">
+      <div class="page-hero-bg gallery-bg"></div>
+      <div class="page-title-wrap">
+        <div class="page-title-row"><span></span><h1 id="gallery-title">Gallery</h1><span></span></div>
+        <p>A sweet collection of our bakes</p>
+      </div>
+    </section>
+
+    <section class="gallery-section container-wide" aria-label="Bakery gallery images">
+      <div class="masonry-gallery">
+        <img src="assets/gallery/gallery-001.webp" alt="Kabelo's Tasty Bakery gallery image 1" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-002.webp" alt="Kabelo's Tasty Bakery gallery image 2" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-003.webp" alt="Kabelo's Tasty Bakery gallery image 3" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-004.webp" alt="Kabelo's Tasty Bakery gallery image 4" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-005.webp" alt="Kabelo's Tasty Bakery gallery image 5" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-006.webp" alt="Kabelo's Tasty Bakery gallery image 6" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-007.webp" alt="Kabelo's Tasty Bakery gallery image 7" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-008.webp" alt="Kabelo's Tasty Bakery gallery image 8" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-009.webp" alt="Kabelo's Tasty Bakery gallery image 9" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-010.webp" alt="Kabelo's Tasty Bakery gallery image 10" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-011.webp" alt="Kabelo's Tasty Bakery gallery image 11" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-012.webp" alt="Kabelo's Tasty Bakery gallery image 12" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-013.webp" alt="Kabelo's Tasty Bakery gallery image 13" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-014.webp" alt="Kabelo's Tasty Bakery gallery image 14" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-015.webp" alt="Kabelo's Tasty Bakery gallery image 15" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-016.webp" alt="Kabelo's Tasty Bakery gallery image 16" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-017.webp" alt="Kabelo's Tasty Bakery gallery image 17" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-018.webp" alt="Kabelo's Tasty Bakery gallery image 18" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-019.webp" alt="Kabelo's Tasty Bakery gallery image 19" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-020.webp" alt="Kabelo's Tasty Bakery gallery image 20" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-021.webp" alt="Kabelo's Tasty Bakery gallery image 21" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-022.webp" alt="Kabelo's Tasty Bakery gallery image 22" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-023.webp" alt="Kabelo's Tasty Bakery gallery image 23" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-024.webp" alt="Kabelo's Tasty Bakery gallery image 24" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-025.webp" alt="Kabelo's Tasty Bakery gallery image 25" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-026.webp" alt="Kabelo's Tasty Bakery gallery image 26" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-027.webp" alt="Kabelo's Tasty Bakery gallery image 27" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-028.webp" alt="Kabelo's Tasty Bakery gallery image 28" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-029.webp" alt="Kabelo's Tasty Bakery gallery image 29" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-030.webp" alt="Kabelo's Tasty Bakery gallery image 30" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-031.webp" alt="Kabelo's Tasty Bakery gallery image 31" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-032.webp" alt="Kabelo's Tasty Bakery gallery image 32" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-033.webp" alt="Kabelo's Tasty Bakery gallery image 33" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-034.webp" alt="Kabelo's Tasty Bakery gallery image 34" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-035.webp" alt="Kabelo's Tasty Bakery gallery image 35" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-036.webp" alt="Kabelo's Tasty Bakery gallery image 36" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-037.webp" alt="Kabelo's Tasty Bakery gallery image 37" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-038.webp" alt="Kabelo's Tasty Bakery gallery image 38" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-039.webp" alt="Kabelo's Tasty Bakery gallery image 39" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-040.webp" alt="Kabelo's Tasty Bakery gallery image 40" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-041.webp" alt="Kabelo's Tasty Bakery gallery image 41" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-042.webp" alt="Kabelo's Tasty Bakery gallery image 42" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-043.webp" alt="Kabelo's Tasty Bakery gallery image 43" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-044.webp" alt="Kabelo's Tasty Bakery gallery image 44" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-045.webp" alt="Kabelo's Tasty Bakery gallery image 45" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-046.webp" alt="Kabelo's Tasty Bakery gallery image 46" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-047.webp" alt="Kabelo's Tasty Bakery gallery image 47" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-048.webp" alt="Kabelo's Tasty Bakery gallery image 48" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-049.webp" alt="Kabelo's Tasty Bakery gallery image 49" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-050.webp" alt="Kabelo's Tasty Bakery gallery image 50" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-051.webp" alt="Kabelo's Tasty Bakery gallery image 51" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-052.webp" alt="Kabelo's Tasty Bakery gallery image 52" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-053.webp" alt="Kabelo's Tasty Bakery gallery image 53" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-054.webp" alt="Kabelo's Tasty Bakery gallery image 54" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-055.webp" alt="Kabelo's Tasty Bakery gallery image 55" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-056.webp" alt="Kabelo's Tasty Bakery gallery image 56" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-057.webp" alt="Kabelo's Tasty Bakery gallery image 57" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-058.webp" alt="Kabelo's Tasty Bakery gallery image 58" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-059.webp" alt="Kabelo's Tasty Bakery gallery image 59" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-060.webp" alt="Kabelo's Tasty Bakery gallery image 60" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-061.webp" alt="Kabelo's Tasty Bakery gallery image 61" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-062.webp" alt="Kabelo's Tasty Bakery gallery image 62" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-063.webp" alt="Kabelo's Tasty Bakery gallery image 63" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-064.webp" alt="Kabelo's Tasty Bakery gallery image 64" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-065.webp" alt="Kabelo's Tasty Bakery gallery image 65" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-066.webp" alt="Kabelo's Tasty Bakery gallery image 66" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-067.webp" alt="Kabelo's Tasty Bakery gallery image 67" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-068.webp" alt="Kabelo's Tasty Bakery gallery image 68" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-069.webp" alt="Kabelo's Tasty Bakery gallery image 69" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-070.webp" alt="Kabelo's Tasty Bakery gallery image 70" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-071.webp" alt="Kabelo's Tasty Bakery gallery image 71" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-072.webp" alt="Kabelo's Tasty Bakery gallery image 72" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-073.webp" alt="Kabelo's Tasty Bakery gallery image 73" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-074.webp" alt="Kabelo's Tasty Bakery gallery image 74" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-075.webp" alt="Kabelo's Tasty Bakery gallery image 75" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-076.webp" alt="Kabelo's Tasty Bakery gallery image 76" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-077.webp" alt="Kabelo's Tasty Bakery gallery image 77" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-078.webp" alt="Kabelo's Tasty Bakery gallery image 78" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-079.webp" alt="Kabelo's Tasty Bakery gallery image 79" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-080.webp" alt="Kabelo's Tasty Bakery gallery image 80" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-081.webp" alt="Kabelo's Tasty Bakery gallery image 81" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-082.webp" alt="Kabelo's Tasty Bakery gallery image 82" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-083.webp" alt="Kabelo's Tasty Bakery gallery image 83" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-084.webp" alt="Kabelo's Tasty Bakery gallery image 84" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-085.webp" alt="Kabelo's Tasty Bakery gallery image 85" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-086.webp" alt="Kabelo's Tasty Bakery gallery image 86" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-087.webp" alt="Kabelo's Tasty Bakery gallery image 87" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-088.webp" alt="Kabelo's Tasty Bakery gallery image 88" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-089.webp" alt="Kabelo's Tasty Bakery gallery image 89" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-090.webp" alt="Kabelo's Tasty Bakery gallery image 90" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-091.webp" alt="Kabelo's Tasty Bakery gallery image 91" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-092.webp" alt="Kabelo's Tasty Bakery gallery image 92" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-093.webp" alt="Kabelo's Tasty Bakery gallery image 93" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-094.webp" alt="Kabelo's Tasty Bakery gallery image 94" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-095.webp" alt="Kabelo's Tasty Bakery gallery image 95" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-096.webp" alt="Kabelo's Tasty Bakery gallery image 96" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-097.webp" alt="Kabelo's Tasty Bakery gallery image 97" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-098.webp" alt="Kabelo's Tasty Bakery gallery image 98" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-099.webp" alt="Kabelo's Tasty Bakery gallery image 99" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-100.webp" alt="Kabelo's Tasty Bakery gallery image 100" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-101.webp" alt="Kabelo's Tasty Bakery gallery image 101" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-102.webp" alt="Kabelo's Tasty Bakery gallery image 102" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-103.webp" alt="Kabelo's Tasty Bakery gallery image 103" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-104.webp" alt="Kabelo's Tasty Bakery gallery image 104" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-105.webp" alt="Kabelo's Tasty Bakery gallery image 105" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-106.webp" alt="Kabelo's Tasty Bakery gallery image 106" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-107.webp" alt="Kabelo's Tasty Bakery gallery image 107" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-108.webp" alt="Kabelo's Tasty Bakery gallery image 108" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-109.webp" alt="Kabelo's Tasty Bakery gallery image 109" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-110.webp" alt="Kabelo's Tasty Bakery gallery image 110" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-111.webp" alt="Kabelo's Tasty Bakery gallery image 111" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-112.webp" alt="Kabelo's Tasty Bakery gallery image 112" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-113.webp" alt="Kabelo's Tasty Bakery gallery image 113" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-114.webp" alt="Kabelo's Tasty Bakery gallery image 114" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-115.webp" alt="Kabelo's Tasty Bakery gallery image 115" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-116.webp" alt="Kabelo's Tasty Bakery gallery image 116" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-117.webp" alt="Kabelo's Tasty Bakery gallery image 117" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-118.webp" alt="Kabelo's Tasty Bakery gallery image 118" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-119.webp" alt="Kabelo's Tasty Bakery gallery image 119" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-120.webp" alt="Kabelo's Tasty Bakery gallery image 120" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-121.webp" alt="Kabelo's Tasty Bakery gallery image 121" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-122.webp" alt="Kabelo's Tasty Bakery gallery image 122" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-123.webp" alt="Kabelo's Tasty Bakery gallery image 123" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-124.webp" alt="Kabelo's Tasty Bakery gallery image 124" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-125.webp" alt="Kabelo's Tasty Bakery gallery image 125" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-126.webp" alt="Kabelo's Tasty Bakery gallery image 126" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-127.webp" alt="Kabelo's Tasty Bakery gallery image 127" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-128.webp" alt="Kabelo's Tasty Bakery gallery image 128" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-129.webp" alt="Kabelo's Tasty Bakery gallery image 129" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-130.webp" alt="Kabelo's Tasty Bakery gallery image 130" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-131.webp" alt="Kabelo's Tasty Bakery gallery image 131" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-132.webp" alt="Kabelo's Tasty Bakery gallery image 132" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-133.webp" alt="Kabelo's Tasty Bakery gallery image 133" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-134.webp" alt="Kabelo's Tasty Bakery gallery image 134" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-135.webp" alt="Kabelo's Tasty Bakery gallery image 135" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-136.webp" alt="Kabelo's Tasty Bakery gallery image 136" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-137.webp" alt="Kabelo's Tasty Bakery gallery image 137" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-138.webp" alt="Kabelo's Tasty Bakery gallery image 138" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-139.webp" alt="Kabelo's Tasty Bakery gallery image 139" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-140.webp" alt="Kabelo's Tasty Bakery gallery image 140" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-141.webp" alt="Kabelo's Tasty Bakery gallery image 141" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-142.webp" alt="Kabelo's Tasty Bakery gallery image 142" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-143.webp" alt="Kabelo's Tasty Bakery gallery image 143" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-144.webp" alt="Kabelo's Tasty Bakery gallery image 144" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-145.webp" alt="Kabelo's Tasty Bakery gallery image 145" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-146.webp" alt="Kabelo's Tasty Bakery gallery image 146" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-147.webp" alt="Kabelo's Tasty Bakery gallery image 147" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-148.webp" alt="Kabelo's Tasty Bakery gallery image 148" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-149.webp" alt="Kabelo's Tasty Bakery gallery image 149" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-150.webp" alt="Kabelo's Tasty Bakery gallery image 150" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-151.webp" alt="Kabelo's Tasty Bakery gallery image 151" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-152.webp" alt="Kabelo's Tasty Bakery gallery image 152" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-153.webp" alt="Kabelo's Tasty Bakery gallery image 153" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-154.webp" alt="Kabelo's Tasty Bakery gallery image 154" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-155.webp" alt="Kabelo's Tasty Bakery gallery image 155" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-156.webp" alt="Kabelo's Tasty Bakery gallery image 156" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-157.webp" alt="Kabelo's Tasty Bakery gallery image 157" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-158.webp" alt="Kabelo's Tasty Bakery gallery image 158" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-159.webp" alt="Kabelo's Tasty Bakery gallery image 159" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-160.webp" alt="Kabelo's Tasty Bakery gallery image 160" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-161.webp" alt="Kabelo's Tasty Bakery gallery image 161" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-162.webp" alt="Kabelo's Tasty Bakery gallery image 162" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-163.webp" alt="Kabelo's Tasty Bakery gallery image 163" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-164.webp" alt="Kabelo's Tasty Bakery gallery image 164" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-165.webp" alt="Kabelo's Tasty Bakery gallery image 165" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-166.webp" alt="Kabelo's Tasty Bakery gallery image 166" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-167.webp" alt="Kabelo's Tasty Bakery gallery image 167" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-168.webp" alt="Kabelo's Tasty Bakery gallery image 168" loading="lazy" decoding="async">
+        <img src="assets/gallery/gallery-169.webp" alt="Kabelo's Tasty Bakery gallery image 169" loading="lazy" decoding="async">
+      </div>
+    </section>
+  </section>
+
+  <section id="about" class="page-view" data-page="about" aria-labelledby="about-title">
+    <section class="page-hero about-hero">
+      <div class="page-hero-bg about-bg"></div>
+      <div class="page-title-wrap about-title">
+        <h1 id="about-title">About Kabelo’s<br>Tasty Bakery</h1>
+        <div class="divider small"><span></span><b>❤</b><span></span></div>
+        <p>Baked with passion. Shared with love.</p>
+      </div>
+    </section>
+
+    <section class="about-content container">
+      <div class="about-card story-card">
+        <div class="section-title"><span></span><i>❤</i><h2>Our Story</h2><i>❤</i><span></span></div>
+        <p>Kabelo’s Tasty Bakery is a small home bakery built with love, passion, and a dedication to making every celebration feel special. From custom cakes to fresh scones, cupcakes, biscuits, muffins, and jam tarts, every treat is made with care, quality ingredients, and a homemade touch customers can taste.</p>
+      </div>
+      <div class="about-card love-card">
+        <div class="section-title"><span></span><i>❤</i><h2>Why Customers Love Us</h2><i>❤</i><span></span></div>
+        <ul class="love-list">
+          <li><span class="round-icon"><svg><use href="#icon-heart-outline"></use></svg></span> Made with love in a home kitchen</li>
+          <li><span class="round-icon"><svg><use href="#icon-leaf"></use></svg></span> Fresh, high-quality ingredients</li>
+          <li><span class="round-icon"><svg><use href="#icon-cake"></use></svg></span> Custom creations for every occasion</li>
+          <li><span class="round-icon"><svg><use href="#icon-smile"></use></svg></span> Personal touch &amp; friendly service</li>
+        </ul>
+      </div>
+      <div class="about-card bake-card">
+        <div class="section-title"><span></span><i>❤</i><h2>What We Bake</h2><i>❤</i><span></span></div>
+        <div class="bake-grid bake-grid-four">
+          <div><img src="assets/products/cake-product.webp" alt="Cakes" loading="lazy" decoding="async"><p>Cakes</p></div>
+          <div><img src="assets/products/cupcakes-product.webp" alt="Cupcakes" loading="lazy" decoding="async"><p>Cupcakes</p></div>
+          <div><img src="assets/products/scones-product.webp" alt="Scones" loading="lazy" decoding="async"><p>Scones</p></div>
+          <div><img src="assets/products/biscuits-product.webp" alt="Biscuits" loading="lazy" decoding="async"><p>Biscuits</p></div>
+        </div>
+      </div>
+      <div class="values-card">
+        <div class="section-title"><span></span><i>❤</i><h2>Our Values</h2><i>❤</i><span></span></div>
+        <div class="values-grid">
+          <article><span class="value-icon"><img src="assets/icons/handmade.svg" alt=""></span><h3>Handmade</h3><p>Every treat is handmade with care and attention.</p></article>
+          <article><span class="value-icon"><img src="assets/icons/fresh.svg" alt=""></span><h3>Fresh</h3><p>We use fresh, quality ingredients in every bake.</p></article>
+          <article><span class="value-icon"><svg><use href="#icon-heart-outline"></use></svg></span><h3>Made with Love</h3><p>Baked with passion and shared with love.</p></article>
+          <article><span class="value-icon"><svg><use href="#icon-gift"></use></svg></span><h3>Custom for Every Occasion</h3><p>From birthdays to tea parties, we bake it just for you.</p></article>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="contact" class="page-view" data-page="contact" aria-labelledby="contact-title">
+    <section class="page-hero contact-hero">
+      <div class="page-hero-bg contact-bg"></div>
+      <img class="contact-hero-cake" src="assets/banners/contact-cake-cutout.webp" alt="" aria-hidden="true">
+      <div class="page-title-wrap contact-title">
+        <h1 id="contact-title">Get in Touch</h1>
+        <div class="divider small"><span></span><b>❤</b><span></span></div>
+        <p>We’d love to hear from you and help with your sweet order.</p>
+      </div>
+    </section>
+
+    <section class="contact-section container">
+      <div class="contact-info-panel">
+        <div class="section-title"><span></span><i>❤</i><h2>Contact Information</h2><i>❤</i><span></span></div>
+        <article class="contact-card"><span class="contact-icon"><svg><use href="#icon-map-pin"></use></svg></span><div><h3>Address</h3><p>270 Hippo Avenue, Centurion</p></div></article>
+        <article class="contact-card"><span class="contact-icon"><svg><use href="#icon-phone"></use></svg></span><div><h3>Phone</h3><p><a href="tel:+27762701921">076 270 1921</a></p></div></article>
+        <article class="contact-card"><span class="contact-icon"><img src="assets/icons/whatsapp-pink.svg" alt=""></span><div><h3>WhatsApp Orders</h3><p>Order directly via WhatsApp for quick responses and easy ordering.</p></div></article>
+        <article class="map-card">
+          <div class="map-visual"><span>●</span></div>
+          <div class="visit-copy"><h3>Visit Us</h3><div class="divider tiny"><span></span><b>❤</b><span></span></div><p>We’d love to welcome you. Feel free to contact us for directions.</p></div>
+        </article>
+      </div>
+      <div class="inquiry-panel">
+        <div class="section-title"><span></span><i>❤</i><h2>Send Us an Inquiry</h2><i>❤</i><span></span></div>
+        <form class="contact-form" action="https://wa.me/27762701921?text=Hi%20Kabelo%2C%20I%20would%20like%20to%20place%20an%20order." method="get">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" placeholder="Your name"></label>
+            <label>Phone Number<input type="tel" name="phone" placeholder="Your phone number"></label>
+          </div>
+          <label>Event Date<input type="date" name="date"></label>
+          <label>Message<textarea name="message" rows="4" placeholder="Tell us about your order or enquiry..."></textarea></label>
+          <button class="btn btn-primary full" type="submit">Send Message ❤</button>
+        </form>
+        <div class="order-note"><span class="note-icon"><img src="assets/icons/cupcake-heart.svg" alt=""></span><p><strong>Custom cakes, cupcakes, scones and more!</strong><br>For custom orders or bulk enquiries, please give us as much detail as possible so we can assist you better.</p></div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-lace" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo/kabelos-logo.webp" alt="Kabelo's Tasty Bakery logo" width="588" height="620" loading="lazy" decoding="async">
+      <div class="social-row" aria-label="Social links">
+        <a href="https://www.facebook.com/profile.php?id=100064060841840" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+        <a href="https://wa.me/27762701921?text=Hi%20Kabelo%2C%20I%20would%20like%20to%20place%20an%20order." aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="WhatsApp"></a>
+      </div>
+    </div>
+    <div class="footer-block">
+      <h3>Quick Links</h3>
+      <a href="#home" data-page-link="home">Home</a>
+      <a href="#gallery" data-page-link="gallery">Gallery</a>
+      <a href="#about" data-page-link="about">About</a>
+      <a href="#contact" data-page-link="contact">Contact</a>
+    </div>
+    <div class="footer-block">
+      <h3>Visit Us</h3>
+      <p>270 Hippo Avenue,<br>Centurion</p>
+    </div>
+    <div class="footer-block">
+      <h3>Contact Us</h3>
+      <p><a href="tel:+27762701921">076 270 1921</a></p>
+      <p><a href="https://wa.me/27762701921?text=Hi%20Kabelo%2C%20I%20would%20like%20to%20place%20an%20order.">Order via WhatsApp</a></p>
+    </div>
+    <div class="footer-block stay-touch">
+      <h3>Let’s Stay in Touch</h3>
+      <p>Follow us for our latest creations and sweet updates.</p>
+      <p class="script-note">Baked with Love <span>❤</span></p>
+    </div>
+  </div>
+  <div class="copyright">© 2025 Kabelo’s Tasty Bakery. All rights reserved.</div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
