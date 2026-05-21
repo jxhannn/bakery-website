@@ -1529,3 +1529,46 @@ body{font-family:var(--serif)!important;}
     height:auto !important;
   }
 }
+
+/* =========================================================
+   SIGNATURE PRODUCTS: ADD CAKE CUPS CARD
+   Four equal cards on desktop, balanced two-by-two on tablets,
+   single column on mobile. Product images keep a clean 4:3 ratio
+   and are not cropped.
+   ========================================================= */
+.signature .product-grid{
+  align-items:stretch !important;
+}
+.signature .product-card{
+  height:100% !important;
+}
+.signature .product-card img{
+  width:100% !important;
+  aspect-ratio:4 / 3 !important;
+  height:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#fffaf6 !important;
+}
+.cake-cups-card img{
+  object-position:center center !important;
+}
+@media (min-width: 901px){
+  .signature .product-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    max-width:1180px !important;
+    gap:22px !important;
+  }
+}
+@media (min-width: 761px) and (max-width: 900px){
+  .signature .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    max-width:760px !important;
+    gap:22px !important;
+  }
+}
+@media (max-width: 760px){
+  .signature .product-grid{
+    grid-template-columns:1fr !important;
+  }
+}
