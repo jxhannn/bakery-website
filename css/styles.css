@@ -1572,3 +1572,78 @@ body{font-family:var(--serif)!important;}
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* =========================================================
+   FINAL DESKTOP FIX: Keep all 4 Signature Product cards on one row
+   This is scoped to the Home page only and placed at the very end so it
+   wins over older grid rules and any cached/older CSS once redeployed.
+   ========================================================= */
+@media (min-width: 1024px){
+  body.view-home #home .signature.container,
+  #home.page-view .signature.container{
+    width:min(1260px,92vw) !important;
+    max-width:1260px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.view-home #home .signature .product-grid,
+  #home.page-view .signature .product-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    grid-auto-flow:row !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    gap:22px !important;
+    width:100% !important;
+    max-width:none !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.view-home #home .signature .product-card,
+  #home.page-view .signature .product-card{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    height:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  body.view-home #home .signature .product-card img,
+  #home.page-view .signature .product-card img{
+    width:100% !important;
+    aspect-ratio:4 / 3 !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#fffaf6 !important;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1023px){
+  body.view-home #home .signature.container,
+  #home.page-view .signature.container{
+    width:min(820px,92vw) !important;
+    max-width:820px !important;
+  }
+  body.view-home #home .signature .product-grid,
+  #home.page-view .signature .product-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:22px !important;
+    width:100% !important;
+    max-width:none !important;
+  }
+}
+
+@media (max-width: 760px){
+  body.view-home #home .signature .product-grid,
+  #home.page-view .signature .product-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+}
