@@ -157,12 +157,20 @@
       });
 
       originalImages.forEach((img, index) => {
-        img.loading = 'lazy';
+        // First visual row loads immediately; the rest stay lazy for faster first paint.
+        if (index < cols) {
+          img.loading = 'eager';
+          img.fetchPriority = 'high';
+        } else {
+          img.loading = 'lazy';
+          img.fetchPriority = 'low';
+        }
         img.decoding = 'async';
         img.style.height = 'auto';
         img.style.maxHeight = 'none';
         img.style.objectFit = 'contain';
-        img.style.setProperty('--gallery-delay', `${Math.floor(index / cols) * 70 + (index % cols) * 12}ms`);
+        // Shorter stagger so the gallery feels snappier without looking abrupt.
+        img.style.setProperty('--gallery-delay', `${Math.floor(index / cols) * 40 + (index % cols) * 8}ms`);
         columns[index % cols].appendChild(img);
       });
 

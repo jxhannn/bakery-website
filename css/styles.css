@@ -1500,10 +1500,14 @@ body{font-family:var(--serif)!important;}
 }
 
 
-/* Performance optimisation: keep large off-screen pages and gallery images cheap to render. */
+/* Performance optimisation: keep large off-screen pages cheap to render. */
 .page-view:not(.active){display:none !important;}
-.gallery-section{content-visibility:auto;contain-intrinsic-size:1200px;}
-.masonry-gallery img{content-visibility:auto;}
+/* Avoid content-visibility on gallery images — it can delay decode while scrolling. */
+.gallery-section{content-visibility:visible;}
+.masonry-gallery img{
+  content-visibility:visible;
+  background:#fff4e8;
+}
 
 /* =========================================================
    FOOTER LOGO STRETCH FIX
