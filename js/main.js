@@ -24,9 +24,9 @@
     } else {
       window.scrollTo(0, 0);
     }
-    // Rebuild gallery only after the page is visible so layout + fade animations work.
+    // Layout gallery once the page is visible (column count may depend on width).
     if (page === 'gallery' && typeof window.__rebuildGallery === 'function') {
-      requestAnimationFrame(() => window.__rebuildGallery(true));
+      requestAnimationFrame(() => window.__rebuildGallery(false));
     }
   }
 
@@ -127,12 +127,20 @@
   }
 
   // Gallery: Pinterest-style masonry with row-first ordering and no image cropping.
-  // The previous fixed-height grid cropped products. This version keeps each
-  // image at its real aspect ratio and distributes them across visual columns
-  // so the first row appears first, then the next row down.
+  // Snapshot src/alt from HTML, then build columns with fresh <img> nodes.
+  // Reusing the same nodes while clearing innerHTML aborts in-flight loads and
+  // used to falsely mark photos as "(unavailable)".
   const gallery = document.querySelector('.masonry-gallery');
   if (gallery) {
-    const originalImages = Array.from(gallery.querySelectorAll('img'));
+    const imageData = Array.from(gallery.querySelectorAll('img')).map((img, i) => ({
+      src: img.getAttribute('src'),
+      alt: (img.getAttribute('alt') || ('Kabelo\'s Tasty Bakery gallery image ' + (i + 1)))
+        .replace(/\s*\(unavailable\)\s*$/i, '')
+        .trim(),
+      width: img.getAttribute('width') || '',
+      height: img.getAttribute('height') || ''
+    }));
+
     const getCols = () => {
       const width = window.innerWidth;
       if (width <= 380) return 1;
@@ -150,53 +158,43 @@
         return;
       }
       currentCols = cols;
-      gallery.innerHTML = '';
       gallery.style.gridTemplateColumns = `repeat(${cols}, minmax(0, 1fr))`;
 
+      const frag = document.createDocumentFragment();
       const columns = Array.from({ length: cols }, () => {
         const column = document.createElement('div');
         column.className = 'masonry-column';
-        gallery.appendChild(column);
+        frag.appendChild(column);
         return column;
       });
 
-      originalImages.forEach((img, index) => {
-        // First visual row loads immediately; the rest stay lazy for faster first paint.
+      imageData.forEach((data, index) => {
+        if (!data.src) return;
+        const img = document.createElement('img');
+        img.src = data.src;
+        img.alt = data.alt;
+        if (data.width) img.setAttribute('width', data.width);
+        if (data.height) img.setAttribute('height', data.height);
+        img.decoding = 'async';
+        // First visual row loads immediately; the rest stay lazy.
         if (index < cols) {
           img.loading = 'eager';
           img.fetchPriority = 'high';
         } else {
           img.loading = 'lazy';
-          img.fetchPriority = 'low';
         }
-        img.decoding = 'async';
-        // Ensure broken/hidden state cannot stick after animation quirks
-        img.style.opacity = '';
-        img.style.visibility = '';
         img.style.height = 'auto';
         img.style.maxHeight = 'none';
         img.style.objectFit = 'contain';
-        img.style.setProperty('--gallery-delay', `${Math.floor(index / cols) * 40 + (index % cols) * 8}ms`);
-        // If an image fails to load, show a subtle placeholder instead of a blank hole
-        img.onerror = function() {
-          this.style.minHeight = '120px';
-          this.alt = (this.alt || 'Gallery image') + ' (unavailable)';
-          this.onerror = null;
-        };
         columns[index % cols].appendChild(img);
       });
 
-      gallery.classList.remove('gallery-row-load');
-      void gallery.offsetWidth;
-      gallery.classList.add('gallery-row-load');
+      gallery.innerHTML = '';
+      gallery.appendChild(frag);
     }
 
     window.__rebuildGallery = buildMasonryColumns;
-    // Initial build; if user opened #gallery directly, rebuild after page is active.
     buildMasonryColumns(true);
-    if (document.body.classList.contains('view-gallery')) {
-      requestAnimationFrame(() => buildMasonryColumns(true));
-    }
     window.addEventListener('resize', () => buildMasonryColumns(false));
   }
 
