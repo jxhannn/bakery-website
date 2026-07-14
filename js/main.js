@@ -24,6 +24,10 @@
     } else {
       window.scrollTo(0, 0);
     }
+    // Rebuild gallery only after the page is visible so layout + fade animations work.
+    if (page === 'gallery' && typeof window.__rebuildGallery === 'function') {
+      requestAnimationFrame(() => window.__rebuildGallery(true));
+    }
   }
 
   pageLinks.forEach(link => {
@@ -166,11 +170,19 @@
           img.fetchPriority = 'low';
         }
         img.decoding = 'async';
+        // Ensure broken/hidden state cannot stick after animation quirks
+        img.style.opacity = '';
+        img.style.visibility = '';
         img.style.height = 'auto';
         img.style.maxHeight = 'none';
         img.style.objectFit = 'contain';
-        // Shorter stagger so the gallery feels snappier without looking abrupt.
         img.style.setProperty('--gallery-delay', `${Math.floor(index / cols) * 40 + (index % cols) * 8}ms`);
+        // If an image fails to load, show a subtle placeholder instead of a blank hole
+        img.onerror = function() {
+          this.style.minHeight = '120px';
+          this.alt = (this.alt || 'Gallery image') + ' (unavailable)';
+          this.onerror = null;
+        };
         columns[index % cols].appendChild(img);
       });
 
@@ -179,13 +191,13 @@
       gallery.classList.add('gallery-row-load');
     }
 
+    window.__rebuildGallery = buildMasonryColumns;
+    // Initial build; if user opened #gallery directly, rebuild after page is active.
     buildMasonryColumns(true);
+    if (document.body.classList.contains('view-gallery')) {
+      requestAnimationFrame(() => buildMasonryColumns(true));
+    }
     window.addEventListener('resize', () => buildMasonryColumns(false));
-    pageLinks.forEach(link => {
-      if (link.dataset.pageLink === 'gallery') {
-        link.addEventListener('click', () => setTimeout(() => buildMasonryColumns(true), 80));
-      }
-    });
   }
 
 })();
