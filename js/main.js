@@ -24,9 +24,10 @@
     } else {
       window.scrollTo(0, 0);
     }
-    // Layout gallery once the page is visible (column count may depend on width).
+    // Build/rebuild gallery only while the gallery page is visible.
+    // Creating lazy images inside display:none pages breaks loads in Edge/Chrome.
     if (page === 'gallery' && typeof window.__rebuildGallery === 'function') {
-      requestAnimationFrame(() => window.__rebuildGallery(false));
+      requestAnimationFrame(() => window.__rebuildGallery(true));
     }
   }
 
@@ -126,20 +127,22 @@
     });
   }
 
-  // Gallery: Pinterest-style masonry with row-first ordering and no image cropping.
-  // Snapshot src/alt from HTML, then build columns with fresh <img> nodes.
-  // Reusing the same nodes while clearing innerHTML aborts in-flight loads and
-  // used to falsely mark photos as "(unavailable)".
+  // Gallery: Pinterest-style masonry (row-first, no crop).
+  // Images are only injected when the gallery page is active so browsers do not
+  // drop lazy/eager loads that started under display:none.
   const gallery = document.querySelector('.masonry-gallery');
   if (gallery) {
     const imageData = Array.from(gallery.querySelectorAll('img')).map((img, i) => ({
       src: img.getAttribute('src'),
-      alt: (img.getAttribute('alt') || ('Kabelo\'s Tasty Bakery gallery image ' + (i + 1)))
-        .replace(/\s*\(unavailable\)\s*$/i, '')
+      alt: (img.getAttribute('alt') || ("Kabelo's Tasty Bakery gallery image " + (i + 1)))
+        .replace(/\s*\(unavailable\)\s*$/i, "")
         .trim(),
       width: img.getAttribute('width') || '',
       height: img.getAttribute('height') || ''
     }));
+
+    // Clear static HTML; JS owns the layout once the page opens.
+    gallery.innerHTML = '';
 
     const getCols = () => {
       const width = window.innerWidth;
@@ -151,13 +154,21 @@
     };
 
     let currentCols = 0;
+    let built = false;
 
     function buildMasonryColumns(force) {
+      // Never build while the gallery page is hidden.
+      const galleryPage = document.querySelector('.page-view[data-page="gallery"]');
+      if (galleryPage && !galleryPage.classList.contains('active')) {
+        return;
+      }
+
       const cols = getCols();
-      if (!force && cols === currentCols && gallery.querySelector('.masonry-column')) {
+      if (!force && built && cols === currentCols && gallery.querySelector('.masonry-column')) {
         return;
       }
       currentCols = cols;
+      built = true;
       gallery.style.gridTemplateColumns = `repeat(${cols}, minmax(0, 1fr))`;
 
       const frag = document.createDocumentFragment();
@@ -171,18 +182,15 @@
       imageData.forEach((data, index) => {
         if (!data.src) return;
         const img = document.createElement('img');
-        img.src = data.src;
+        // Cache-bust once so old broken browser cache entries are skipped.
+        img.src = data.src + (data.src.indexOf('?') === -1 ? '?v=20260714b' : '');
         img.alt = data.alt;
         if (data.width) img.setAttribute('width', data.width);
         if (data.height) img.setAttribute('height', data.height);
         img.decoding = 'async';
-        // First visual row loads immediately; the rest stay lazy.
-        if (index < cols) {
-          img.loading = 'eager';
-          img.fetchPriority = 'high';
-        } else {
-          img.loading = 'lazy';
-        }
+        // Eager for all: only 42 images (~3.5MB). Avoids Edge lazy-load bugs.
+        img.loading = 'eager';
+        if (index < cols) img.fetchPriority = 'high';
         img.style.height = 'auto';
         img.style.maxHeight = 'none';
         img.style.objectFit = 'contain';
@@ -194,8 +202,15 @@
     }
 
     window.__rebuildGallery = buildMasonryColumns;
-    buildMasonryColumns(true);
-    window.addEventListener('resize', () => buildMasonryColumns(false));
+    // If user landed on #gallery, build now (page already active).
+    if (document.body.classList.contains('view-gallery')) {
+      buildMasonryColumns(true);
+    }
+    window.addEventListener('resize', () => {
+      if (document.body.classList.contains('view-gallery')) {
+        buildMasonryColumns(false);
+      }
+    });
   }
 
 })();
